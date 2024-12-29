@@ -2,173 +2,391 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Joy Patel, a junior web designer with expertise in front-end development, UI design, and SEO analytics.">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio of Joy Patel | Web Designer & Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio" />
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
-
-        .header-title {
-            text-align: center;
-            margin: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .flexible-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .projects .project {
-            margin-bottom: 20px;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .nav-links {
-                justify-content: flex-start;
-            }
-        }
-    </style>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Satisfy&display=swap"
+    rel="stylesheet">
+  <!-- my css -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="https://cdn.dribbble.com/users/2282513/screenshots/4637629/media/979d2bfcd158d07614d93c9592fe9c3b.png" type="image/icon type">
+  <!-- title -->
+  <title>JOY</title>
 </head>
 
 <body>
-    <header>
-        <h1 class="header-title">Joy Patel Portfolio</h1>
-        <nav>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+  <!-- navbar -->
+  <main-header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">JoyPatel</a>
+        <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="toggler-icon top-bar"></span>
+          <span class="toggler-icon middle-bar"></span>
+          <span class="toggler-icon bottom-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active p-4" aria-current="page" href="index.html">Home</a>
+            </li>
+            <a class="nav-link p-4" aria-current="page" href="#project">Projects</a>
+            </li>
+            <a class="nav-link p-4" aria-current="page" href="#service">Services</a>
+            </li>
+            <a class="nav-link p-4" aria-current="page" href="#skill">Skills</a>
+          </li>
+            <a class="nav-link p-4" aria-current="page" href="#About">About</a>
+          </li>
+          <a class="nav-link p-4" aria-current="page" href="#contactMe">Contact</a>
+            </li>             
+          </ul>
+         <a href="cv/cv.pdf" download="DivyaKumari " class="my-cv">Download CV</a>
+        </div>
+      </div>
+      </nav>
+  </main-header>
+
+  <!-- hero section -->
+  <div class="first-section">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+
+        <div class="col-md-6">
+          <div class="intro">
+            <p class="title">-INTRODUCTION</p>
+            <p class="hi">Hi There!👋</p>
+            <h1 class="my-name">I'm <span>Joy Patel</span></h1>
+            <p class="slogun">love to design & develop Websites</p>
+            <p class="slogun">I have gained extensive experience and I have demonstrated my abilities through various projects, including an animated website, an E-commerce Website, a landing page, and a personal portfolio.
+
+            </p>
+            <br>
+
+            <a href="#contactMe" class="homeBtn">Let’s create an awesome website !</a>
+            <div class="social-media">
+              <a href="https://www.linkedin.com/in/joypatel12/"><img src="./img/LinkedIn Circled.png" alt="linkedin"></a>
+              <a href="https://x.com/Joy20112001"> <img src="img/twt2.png" alt="twitter"></a>
+              <a href="https://github.com/j2445"><img src="./img/GitHub.png" alt="github"></a>
+
             </div>
-        </nav>
-    </header>
+          </div>
 
-    <main>
-        <section id="about" class="container py-5">
-            <h2>About Me</h2>
-            <img src="./img/joy.webp" alt="Picture of Joy Patel" class="flexible-image">
-            <p>Hello! I'm Joy Patel, a passionate web designer and developer dedicated to crafting engaging user experiences.</p>
-        </section>
+        </div>
+        <div class="col-md-6 pb-0 img" style="padding: 70px;">
+          <img src="img/joy.webp" alt="" srcset="">
+        </div>
+      </div>
 
-        <section id="projects" class="container py-5 projects">
-            <h2>Projects</h2>
-            <div class="row">
-                <div class="col-md-6 project">
-                    <h3>Website Animated</h3>
-                    <img src="./img/project1.jpg" alt="Screenshot of Website Animated" class="flexible-image">
-                    <div>
-                        <a href="https://github.com/j2445/website-animated" target="_blank">Code</a> |
-                        <a href="https://example.com/live" target="_blank">Live</a>
-                    </div>
-                </div>
-                <div class="col-md-6 project">
-                    <h3>Custom Dashboard</h3>
-                    <img src="./img/project2.jpg" alt="Screenshot of Custom Dashboard" class="flexible-image">
-                    <div>
-                        <a href="https://github.com/j2445/custom-dashboard" target="_blank">Code</a> |
-                        <a href="https://example.com/live-dashboard" target="_blank">Live</a>
-                    </div>
-                </div>
+    </div>
+  </div>
+  <!-- projects -->
+<span><br></span>
+  <div id="project" class="section">
+    <div class="container-fluid">
+      <p class="title">-PROJECTS</p>
+      <div class="poject-section">
+        <h2>FEATURED WORK</h2>
+        <p class="para">I love making websites that can grow big, finding useful solutions, and always learning to get better in the IT world.</p>
+      </div>
+
+
+      <div class="project-grid">
+
+        <div class="item1">
+          <div class="layer">
+            <a href="https://github.com/j2445/website-animated" target="_blank">Code</a> 
+            <a href="https://website-animated-phi.vercel.app/" target="_blank">Live</a>
+          </div>
+        </div>
+
+        <div class="item2">
+          <div class="layer">
+            <a href="https://github.com/j2445/todo-list" target="_blank">Code</a> 
+            <a href="https://todo-list-sepia-one-54.vercel.app/" target="_blank">Live</a>
+          </div>
+        </div>
+
+        <div class="item3">
+          <div class="layer">
+            <a href="https://github.com/j2445/theme-clock" target="_blank">Code</a> 
+            <a href="https://theme-clock-nine-tau.vercel.app/" target="_blank">Live</a>
+          </div>
+        </div>
+
+        <div class="item4">
+          <div class="layer">
+            <a href="https://github.com/j2445/split-landing-page" target="_blank">Code</a> 
+            <a href="https://split-landing-page-orpin.vercel.app/" target="_blank">Live</a>
+          </div>
+        </div>
+
+        <div class="item5">
+          <div class="layer">
+            <a href="https://github.com/j2445/hoverboard" target="_blank">Code</a> 
+            <a href="https://hoverboard-khaki.vercel.app/" target="_blank">Live</a>
+          </div>
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+
+  
+
+
+
+
+  <!-- services -->
+
+  <div id="service" class="section bg">
+    <div class="container-fluid">
+      <p class="title">-SERVICES</p>
+      <div class="poject-section">
+        <h2>SERVICES I PROVIDE</h2>
+        <p class="para">The goal is not to build a website. The goal is to build your business.</p>
+      </div>
+      <div class="services">
+
+        <div class="service-section">
+          <div class="service">
+            <img src="./img/uiux.png" alt="ui/ux design">
+            <h3>UI/UX Design</h3>
+            <p>I work with certain design tools to create high-fidelity designs and prototypes. I design accessible and
+              usable products which aid business growth.</p>
+          </div>
+
+        </div>
+        <div class="service-section">
+          <div class="service">
+            <img src="./img/Web Design.png" alt="ui/ux design">
+            <h3>Web Development</h3>
+            <p>I use various web technologies to develop attractive websites which converts visitors to customers. I
+              develop creative and responsive website layouts.</p>
+          </div>
+
+        </div>
+        <div class="service-section">
+          <div class="service">
+            <img src="./img/WordPress.png" alt="ui/ux design">
+            <h3>Wordpress</h3>
+            <p>WordPress is a free and open-source content management system written in PHP and paired with a MySQL or
+              MariaDB database with supported HTTPs.
+            <p>
+          </div>
+        </div>
+        <div class="service-section">
+          <div class="service">
+            <img src="./img/Google.png" alt="ui/ux design">
+            <h3>Google AD's</h3>
+            <p>Grow your business with Google Ads · Get in front of customers when they're searching for businesses like
+              yours on Google Search and Maps.
+            <p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- skills -->
+
+  <div id="skill" class="section">
+    <div class="container-fluid">
+      <p class="title">-SKILLS</p>
+      <div class="skill-section">
+        <h2>AREA OF EXPERTISE</h2>
+        <p class="para">Let's kickstart your project and collaborate to build something amazing. I'll bring my skills to make your next project shine.</p>
+      </div>
+      <div class="skills">
+        <div class="skill border1 border_right">
+          <div class="items">
+            <img src="./img/html.png" alt="">
+            <p>HTML</p>
+          </div>
+        </div>
+        <div class="skill border1">
+          <div class="items">
+            <img src="./img/css.png" alt="">
+            <p>CSS</p>
+          </div>
+        </div>
+        <div class="skill border1 border3">
+          <div class="items">
+            <img src="./img/javascript (1).png" alt="">
+            <p>JAVASCRIPT</p>
+          </div>
+        </div>
+        <div class="skill border1">
+          <div class="items">
+            <img src="./img/Bootstrap 1.png" alt="">
+            <p>BOOTSTRAP</p>
+          </div>
+        </div>
+        <div class="skill border1 border_right">
+          <div class="items">
+            <img src="./img/node-js.png" alt="">
+            <p>Node.js</p>
+          </div>
+        </div>
+        <div class="skill border1">
+          <div class="items">
+            <img src="./img/react (2).png" alt="">
+            <p>React</p>
+          </div>
+        </div>
+        <div class="skill border1 border_right border7">
+          <div class="items">
+            <img src="./img/git (2).png" alt="">
+            <p>Git</p>
+          </div>
+        </div>
+        <div class="skill border1">
+          <div class="items">
+            <img src="./img/github (7).png" alt="">
+            <p>GitHub</p>
+          </div>
+        </div>
+        <div class="skill border_bottom borderSL">
+          <div class="items">
+            <img src="./img/adobe-xd.png" alt="">
+            <p>Adobe XD</p>
+          </div>
+        </div>
+        <div class="skill border2 border10">
+          <div class="items">
+            <img src="./img/photoshop.png" alt="">
+            <p>Photoshop</p>
+          </div>
+        </div>
+        <div class="skill border_right">
+          <div class="items">
+            <img src="./img/icons8-figma-512.png" alt="">
+            <p>Figma</p>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="items">
+            <img src="./img/WordPress.png" alt="">
+            <p>WordPress</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- connect me -->
+  <div class="section">
+    <div class="container-fluid bg rounded text-center pb-5 pos-relative">
+      <img src="./img/Rocket1.png" alt="">
+      <h1 class="custom-h1">HAVE A PROJECT IN MIND?</h1>
+      <p class="para p-4">Turn your dream website into reality with us. Let's get started!</p>
+      
+
+
+      <a href="#contactMe" class="homeBtn">Let’s create an awesome website</a>
+
+
+    </div>
+  </div>
+  <!-- about me -->
+  <div id="About" class="section bg">
+    <div class="container-fluid">
+      <p class="title">-ABOUT</p>
+      <div class="About-section">
+        <h2>ABOUT ME</h2>
+        <div class="row img-sec">
+          <div class="col-md-6">
+            <p class="para">
+              I'm Joy Patel, a junior Web Designer with front-end development skills. I'm enthusiastic about using my varied experiences to solve complex problems and craft enjoyable user experiences. My expertise lies in web development, front-end web development, UI design, and SEO analytics.
+              <br> <br>
+              I develop websites with HTML, CSS and JavaScript. I have top skills in using design softwares like vscode,
+              Adobe XD, and PhotoShop.
+              <br> <br>
+              
+
+            </p>
+            <br>
+            <a href="#contactMe" class="homeBtn">HIRE ME</a>
+
+            <a href="cv/cv.pdf" download="DivyaKumari " class="my-cv">Download CV</a>
+
+          </div>
+          <div class="col-md-6 img-sec text-center">
+            <img src="./img/about.png" class="img-fluid"
+              alt="Girl is working on laptop at a remote job.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- connect me -->
+  <div id="contactMe" class="section">
+    <div class="container-fluid">
+      <p class="title">-CONTACT</p>
+      <div class="contact-section">
+        <h2>GET IN TOUCH</h2>
+        <p class="para">I'm here and ready to bring your project ideas to life. Just a click away!</p>
+        <div class="row img-sec justify-content-center">
+        
+          <div class="col-md-6">
+            <div class="form">
+              <form method="post" action="https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec" name="contact-form">
+                <input type="text" name="your-name" placeholder="Name"><br>
+                <input type="text" name="your-number" placeholder="Number"><br>
+                <input type="email" name="your-email" placeholder="Email"><br>
+                <textarea name="message" rows="7" placeholder="Your Message"></textarea><br>
+                <input type="submit" value="Submit" id="submit">
+              </form>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <section id="services" class="container py-5">
-            <h2>Services</h2>
-            <ul>
-                <li>Web Design</li>
-                <li>SEO Analytics</li>
-                <li>Front-End Development</li>
-            </ul>
-        </section>
 
-        <section id="contact" class="container py-5">
-            <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/maykzdgo" method="POST">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </section>
-    </main>
 
-    <button class="back-to-top">&#8679;</button>
 
-    <footer>
-        <p>&copy; 2024 Joy Patel. All Rights Reserved.</p>
-    </footer>
 
-    <script>
-        // Back to top functionality
-        const backToTopButton = document.querySelector('.back-to-top');
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec'
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
 
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+const form = document.forms['contact-form']
+
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+  </script>
+
+
+
+  <!-- footer -->
+  <main-footer></main-footer>
+  <div class="footer-bottom">Design by: JOY PATEL</div>
+
+
+  <button class="back-to-top" type="button"></button>
+
+<!--form script-->
+<script src="./js/form.js"></script>
+
+  
 </body>
 
 </html>
