@@ -75,27 +75,6 @@
       transition: transform 0.3s ease-in-out;
     }
 
-    #project {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #f8e1d9 0%, #ffd4c9 100%);
-    }
-
-    #project::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background: 
-        radial-gradient(circle, rgba(242, 108, 79, 0.2) 0%, transparent 40%),
-        radial-gradient(circle at 70% 30%, rgba(242, 108, 79, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 30% 70%, rgba(242, 108, 79, 0.15) 0%, transparent 40%);
-      animation: rotate 30s linear infinite;
-      z-index: 0;
-    }
-
     .project img {
       width: 100%;
       height: 100%;
@@ -502,38 +481,11 @@
       max-width: 300px;
       padding: 2rem;
       border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+      background-color: white;
       border: 1px solid rgba(242, 108, 79, 0.1);
       margin: 4rem;
       transition: transform 0.3s ease-in-out;
       box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    }
-
-    #service {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #fde6e0 0%, #ffeae5 100%);
-    }
-
-    #service::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background: 
-        radial-gradient(circle, rgba(242, 108, 79, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 70% 30%, rgba(242, 108, 79, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 30% 70%, rgba(242, 108, 79, 0.12) 0%, transparent 40%);
-      animation: rotate 30s linear infinite;
-      z-index: 0;
-    }
-
-    .services {
-      position: relative;
-      z-index: 1;
     }
 
     .service-section:hover {
@@ -652,27 +604,6 @@
       font-size: 1.8rem;
       line-height: 150%;
       padding: 1.5rem 0;
-    }
-
-    #contactMe {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 100%);
-    }
-
-    #contactMe::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background: 
-        radial-gradient(circle, rgba(78, 84, 200, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 70% 30%, rgba(100, 149, 237, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 30% 70%, rgba(135, 206, 250, 0.08) 0%, transparent 40%);
-      animation: rotate 30s linear infinite;
-      z-index: 0;
     }
 
     .social-media {
@@ -1169,20 +1100,29 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-out;
     }
 
-    .preloader.fade-out {
-      opacity: 0;
+    .loader-container {
+      text-align: center;
     }
 
-    .loader {
+    .loader-circle {
       width: 50px;
       height: 50px;
       border: 5px solid #f3f3f3;
       border-top: 5px solid #F26C4F;
       border-radius: 50%;
+      margin: 0 auto 15px;
       animation: spin 1s linear infinite;
+    }
+
+    .loader-text {
+      color: #F26C4F;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+      animation: pulse 1.5s ease-in-out infinite;
     }
 
     @keyframes spin {
@@ -1192,6 +1132,20 @@
 
       100% {
         transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.4;
       }
     }
 
@@ -1278,14 +1232,17 @@
 </head>
 
 <body>
-  <div class="preloader">
-    <div class="loader"></div>
-  </div>
 
+  <div class="preloader">
+    <div class="loader-container">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Loading...</div>
+    </div>
+  </div>
   <main-header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="javascript:window.location.reload()" >JoyPatel</a>
+        <a class="navbar-brand" href="index.html">JoyPatel</a>
         <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
           data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -1296,7 +1253,7 @@
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active p-4" aria-current="page" href="#" onclick="scrollToTop(); return false;">Home</a>
+              <a class="nav-link active p-4" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link p-4" aria-current="page" href="#project">Projects</a>
@@ -1593,7 +1550,7 @@
           </div>
           <div class="col-md-6 img-sec text-center">
             <div class="profile-container">
-              <img src="img/about.jpg" alt="profile" class="profile-img">
+              <img src="img/about.webp" alt="profile" class="profile-img">
             </div>
           </div>
         </div>
@@ -1631,16 +1588,9 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script>
-
-window.addEventListener('load', function () {
-      const preloader = document.querySelector('.preloader');
-      preloader.classList.add('fade-out');
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 3000);
-    });
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec';
     const form = document.forms['contact-form'];
+
     form.addEventListener('submit', e => {
       e.preventDefault();
       fetch(scriptURL, {
@@ -1653,9 +1603,12 @@ window.addEventListener('load', function () {
         })
         .catch(error => console.error('Error!', error.message));
     });
-    customElements.define("main-footer", Footer);
+  </script>
+
+  <script>
     const amountScrolled = 200;
     const btnBackToTop = document.querySelector('.back-to-top');
+
     const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
     const toggleBtnBackToTop = () => {
       if (window.scrollY > amountScrolled) {
@@ -1664,8 +1617,22 @@ window.addEventListener('load', function () {
         btnBackToTop.classList.remove('back-to-top_show');
       }
     };
+
     btnBackToTop.addEventListener('click', backToTop);
     window.addEventListener('scroll', toggleBtnBackToTop);
+
+    window.addEventListener('load', function () {
+      const preloader = document.querySelector('.preloader');
+
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      }, 3000); // Shows preloader for 3 seconds
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 
