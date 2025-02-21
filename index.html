@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Satisfy&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon"
     href="https://cdn.dribbble.com/users/2282513/screenshots/4637629/media/979d2bfcd158d07614d93c9592fe9c3b.png"
-    type="image/icon type">
+    type="image/icon type" />
   <title>JOY</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 
     * {
       box-sizing: border-box;
@@ -29,9 +29,9 @@
 
     body {
       font-size: 1.6rem;
-      background: #FEF4F2;
+      background: #fef4f2;
       color: #2d2d2d;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       scroll-behavior: smooth;
     }
 
@@ -42,7 +42,7 @@
     h1.custom-h1,
     h2,
     h3 {
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
       font-style: normal;
     }
 
@@ -59,7 +59,7 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin: 3rem 0;
     }
@@ -70,7 +70,7 @@
       overflow: hidden;
       height: 250px;
       width: 100%;
-      background-color: #4e54c8;
+      background-color: #b024e7;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease-in-out;
     }
@@ -78,7 +78,7 @@
     .project img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: full;
       border-radius: 10px;
     }
 
@@ -113,7 +113,7 @@
       opacity: 0;
       transition: 0.7s;
       background-color: #ff7777;
-      border: #F87474;
+      border: #f87474;
     }
 
     .layer:hover a {
@@ -122,7 +122,7 @@
 
     .layer a:hover {
       background-color: #f54343;
-      border: #F87474;
+      border: #f87474;
     }
 
     @media screen and (max-width: 768px) {
@@ -140,7 +140,7 @@
     }
 
     .bg {
-      background-color: #FEF4F2;
+      background-color: #fef4f2;
     }
 
     .section {
@@ -166,28 +166,28 @@
     }
 
     p.para {
-      font-family: 'Nunito';
+      font-family: "Nunito";
       font-style: normal;
       font-weight: 400;
       font-size: 1.5rem;
       line-height: 1.8rem;
       margin: 0 auto 2rem;
-      color: #0D0F16;
+      color: #0d0f16;
     }
 
     .navbar {
-      background-color: #FEF4F2 !important;
+      background-color: #2200ff !important;
       margin: 0 auto;
     }
 
     .navbar-brand {
-      font-family: 'Satisfy', cursive;
+      font-family: "Satisfy", cursive;
       font-size: 4.4rem;
-      color: #0D0F16;
+      color: #ffffff;
     }
 
     .navbar-collapse {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: 1.4rem;
       font-weight: 900;
       line-height: 2rem;
@@ -197,7 +197,7 @@
       width: 20px;
       height: 20px;
       position: relative;
-      transition: .5s ease-in-out;
+      transition: 0.5s ease-in-out;
     }
 
     .navbar-toggler,
@@ -219,12 +219,12 @@
       position: absolute;
       height: 0.3rem;
       width: 100%;
-      background: #0D0F16;
+      background: #053bff;
       border-radius: 0.1rem;
       opacity: 1;
       left: 0;
       transform: rotate(0deg);
-      transition: .25s ease-in-out;
+      transition: 0.25s ease-in-out;
     }
 
     .middle-bar {
@@ -262,45 +262,63 @@
 
     a.my-cv {
       text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      color: #F87474;
+      font-family: "Montserrat", sans-serif;
+      color: #f87474;
       font-size: 1.4rem;
       padding: 1.2rem 1.6rem;
-      border: .1rem solid #F87474;
-      border-radius: .5rem;
-      background-color: #FEF4F2 !important;
+      border: 0.1rem solid #f87474;
+      border-radius: 0.5rem;
+      background-color: #fef4f2 !important;
     }
 
     a.my-cv:hover {
-      background: linear-gradient(90deg, rgba(79, 1, 1, 1) 0%, rgba(242, 79, 79, 1) 81%);
+      background: linear-gradient(90deg,
+          rgba(79, 1, 1, 1) 0%,
+          rgba(242, 79, 79, 1) 81%);
       color: white;
       font-weight: 600;
-      border: .1rem solid white;
+      border: 0.1rem solid white;
     }
 
     .first-section {
-      background-color: #FEF4F2;
-      padding-top: 9rem;
+      padding-top: 1rem;
+      background: linear-gradient(291deg, #577633, #2fe2ca, #f734c0, #7d74d2);
+      background-size: 240% 240%;
+      animation: gradient-animation 10s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .title {
-      color: #F26C4F;
+      color: #ffffff;
       font-size: 1.6rem;
       font-weight: 400;
       line-height: 2rem;
     }
 
     .intro .hi {
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
       font-style: normal;
       font-weight: 800;
       font-size: 1.6rem;
       line-height: 3rem;
-      color: #0D0F16;
+      color: #0d0f16;
     }
 
     .intro .my-name {
-      font-family: 'Satisfy';
+      font-family: "Satisfy";
       font-style: normal;
       font-weight: 400;
       font-size: 4rem;
@@ -309,17 +327,17 @@
     }
 
     .intro .slogun {
-      font-family: 'Nunito';
+      font-family: "Nunito";
       font-style: normal;
       font-weight: 500;
       font-size: 1.6rem;
       line-height: 150%;
       margin: 0 auto 2rem;
-      color: #0D0F16;
+      color: #0d0f16;
     }
 
     .intro .my-name span {
-      color: #F26C4F;
+      color: #f26c4f;
     }
 
     .first-section img {
@@ -333,21 +351,21 @@
 
     .homeBtn {
       text-decoration: none;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
       line-height: 3.2rem;
       font-weight: 500;
       font-size: 1.4rem;
       color: white;
-      background: linear-gradient(90deg, #F26C4F 0%, #F26C4F 81%);
-      border-radius: .2rem;
-      padding: .6rem 2rem;
+      background: linear-gradient(90deg, #f26c4f 0%, #f26c4f 81%);
+      border-radius: 0.2rem;
+      padding: 0.6rem 2rem;
       cursor: pointer;
     }
 
     .homeBtn:hover {
       color: white;
       font-weight: 500;
-      animation: animatedGradient .5s .2s ease 1 both;
+      animation: animatedGradient 0.5s 0.2s ease 1 both;
     }
 
     @keyframes animatedGradient {
@@ -373,7 +391,24 @@
     }
 
     .second-section {
-      background: #FFFFFF;
+      padding-top: 1rem;
+      background: linear-gradient(291deg, #577633, #2fe2ca, #f734c0, #7d74d2);
+      background-size: 240% 240%;
+      animation: gradient-animation 10s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .item1,
@@ -385,7 +420,10 @@
       background-size: cover;
       background-repeat: no-repeat;
       position: relative;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
     }
 
     .item1 {
@@ -454,7 +492,7 @@
       opacity: 0;
       transition: 0.7s;
       background-color: #ff7777;
-      border: #F87474;
+      border: #f87474;
     }
 
     .layer:hover a {
@@ -463,29 +501,40 @@
 
     .layer a:hover {
       background-color: #f54343;
-      border: #F87474;
+      border: #f87474;
+    }
+
+    .third-section {
+      background: rgb(63, 94, 251);
+      background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(156, 98, 110, 1) 56%);
+      padding-top: 4rem;
     }
 
     .service img {
       width: 3.5rem;
       padding-bottom: 2rem;
+      justify-items: center;
     }
 
     .services {
-      display: flex;
+      display: grid;
       justify-content: center;
       flex-wrap: wrap;
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .service-section {
       max-width: 300px;
       padding: 2rem;
       border-radius: 10px;
-      background-color: white;
+      background-color: rgb(219, 93, 93);
       border: 1px solid rgba(242, 108, 79, 0.1);
       margin: 4rem;
       transition: transform 0.3s ease-in-out;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
     }
 
     .service-section:hover {
@@ -494,12 +543,13 @@
 
     .items {
       display: grid;
+      grid-template-columns: repeat(4, 1fr);
       margin: 2rem auto;
-      border: 2px solid rgb(218, 218, 218);
-      transition: all .4s ease-in-out;
+      border: 2px solid rgb(243, 63, 63);
+      transition: all 0.4s ease-in-out;
       border-radius: 7px;
-      background-color: #ffffff;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      background-color: #8088f5;
+      box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.1);
       padding: 25px 25px 25px 25px;
       place-items: center;
       grid-gap: 10px;
@@ -518,6 +568,12 @@
 
     .items p {
       font-weight: 400;
+    }
+
+    .four-section {
+      background: rgb(63, 94, 251);
+      background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(156, 98, 110, 1) 56%);
+      padding-top: 4rem;
     }
 
     .skill {
@@ -570,22 +626,31 @@
       width: 350px;
     }
 
+    .six-section {
+      background: rgb(63, 94, 251);
+      background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(156, 98, 110, 1) 56%);
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
     .About-section .homeBtn {
       text-decoration: none;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
       line-height: 3.2rem;
       font-weight: 500;
       font-size: 1.4rem;
       color: white;
-      background: #F26C4F;
-      border-radius: .2rem;
+      background: #f26c4f;
+      border-radius: 0.2rem;
       padding: 1.2rem 1.6rem;
       margin-right: 2rem;
       cursor: pointer;
     }
 
     .About-section .homeBtn:hover {
-      background: linear-gradient(90deg, rgba(79, 1, 1, 1) 0%, rgba(242, 79, 79, 1) 81%) !important;
+      background: linear-gradient(90deg,
+          rgba(79, 1, 1, 1) 0%,
+          rgba(242, 79, 79, 1) 81%) !important;
       color: white;
       font-weight: 500;
     }
@@ -598,7 +663,7 @@
       display: block;
       text-decoration: none;
       color: #000000;
-      font-family: 'Nunito';
+      font-family: "Nunito";
       font-style: normal;
       font-weight: 400;
       font-size: 1.8rem;
@@ -607,7 +672,8 @@
     }
 
     .social-media {
-      margin-top: 4rem;
+      margin-bottom: 4rem;
+      margin-top: 2rem;
     }
 
     .social-media img {
@@ -627,11 +693,18 @@
       display: flex;
     }
 
+    .seven-section {
+      background: rgb(63, 94, 251);
+      background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(156, 98, 110, 1) 56%);
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
     input,
     textarea,
     button[type="submit"] {
       border-radius: 20px;
-      background: #FEF4F2;
+      background: #fef4f2;
       border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
@@ -676,7 +749,7 @@
 
     ::placeholder {
       padding-left: 15px;
-      font-family: 'Nunito';
+      font-family: "Nunito";
       font-style: normal;
       font-weight: 500;
       font-size: 14px;
@@ -685,27 +758,29 @@
     }
 
     button[type="submit"] {
-      background: #F87474;
-      border: 1px solid #F87474;
+      background: #f87474;
+      border: 1px solid #f87474;
       border-radius: 20px;
-      font-family: 'Nunito';
+      font-family: "Nunito";
       font-style: normal;
       font-weight: 600;
       font-size: 16px;
       line-height: 41px;
-      color: #FFFFFF;
+      color: #ffffff;
       margin-top: 20px;
       padding: 0 15px;
     }
 
     button[type="submit"]:hover {
-      background: linear-gradient(90deg, rgba(79, 1, 1, 1) 0%, rgba(242, 79, 79, 1) 81%) !important;
+      background: linear-gradient(90deg,
+          rgba(79, 1, 1, 1) 0%,
+          rgba(242, 79, 79, 1) 81%) !important;
       border: 1px solid #ffffff;
       color: rgb(255, 255, 255);
     }
 
     footer {
-      background-color: #FEF4F2;
+      background-color: #fef4f2;
     }
 
     .footer {
@@ -757,7 +832,7 @@
 
     .footer-bottom {
       color: #ececec;
-      font-family: 'Nunito';
+      font-family: "Nunito";
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -772,7 +847,7 @@
       bottom: 20px;
       width: 50px;
       height: 50px;
-      background-color: #F26C4F;
+      background-color: #f26c4f;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -791,7 +866,7 @@
     }
 
     .back-to-top::before {
-      content: '↑';
+      content: "↑";
       font-size: 24px;
       color: white;
       transition: transform 0.3s ease-in-out;
@@ -827,7 +902,7 @@
       font-size: 25px;
       text-align: center;
       font-family: "Inter", cursive;
-      color: #F26C4F;
+      color: #f26c4f;
     }
 
     .pricing {
@@ -852,34 +927,34 @@
 
     .button {
       margin-top: 9px;
-      border: 1px solid #F26C4F;
+      border: 1px solid #f26c4f;
       background-color: white;
-      color: #F26C4F;
+      color: #f26c4f;
       border-radius: 5px;
       padding: 8px 18px;
       cursor: pointer;
       font-family: "Inter", cursive;
     }
 
-    @media screen and (min-width:768px) {
+    @media screen and (min-width: 768px) {
       .border_bottom {
         border: none;
       }
     }
 
-    @media screen and (max-width:479px) {
+    @media screen and (max-width: 479px) {
       .skill {
         width: 160px;
       }
     }
 
-    @media screen and (max-width:360px) {
+    @media screen and (max-width: 360px) {
       .skill {
         width: 150px;
       }
     }
 
-    @media screen and (max-width:768px) {
+    @media screen and (max-width: 768px) {
 
       .border3,
       .border7,
@@ -977,7 +1052,7 @@
       .layer a {
         opacity: 1;
         background-color: #ff7777;
-        border: #F87474;
+        border: #f87474;
       }
 
       form {
@@ -1002,7 +1077,7 @@
       }
     }
 
-    @media screen and (min-width:768px) and (max-width: 992px) {
+    @media screen and (min-width: 768px) and (max-width: 992px) {
       span.toggler-icon {
         display: none;
       }
@@ -1034,7 +1109,10 @@
       border: 1px solid rgba(242, 108, 79, 0.1);
       margin: 4rem;
       transition: transform 0.3s ease-in-out;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
     }
 
     .service-section:hover {
@@ -1065,7 +1143,7 @@
       opacity: 0;
       transition: all 0.3s ease-in-out;
       background-color: #ff7777;
-      border: #F87474;
+      border: #f87474;
     }
 
     .homeBtn {
@@ -1095,7 +1173,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #FEF4F2;
+      background: #fef4f2;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1111,15 +1189,15 @@
       width: 50px;
       height: 50px;
       border: 5px solid #f3f3f3;
-      border-top: 5px solid #F26C4F;
+      border-top: 5px solid #f26c4f;
       border-radius: 50%;
       margin: 0 auto 15px;
       animation: spin 1s linear infinite;
     }
 
     .loader-text {
-      color: #F26C4F;
-      font-family: 'Montserrat', sans-serif;
+      color: #f26c4f;
+      font-family: "Montserrat", sans-serif;
       font-size: 18px;
       letter-spacing: 2px;
       animation: pulse 1.5s ease-in-out infinite;
@@ -1179,21 +1257,26 @@
 
     section:not(#home) {
       position: relative;
-      background-color: #FEF4F2;
+      background-color: #fef4f2;
       overflow: hidden;
     }
 
     section:not(#home)::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(78, 84, 200, 0.05) 0%, transparent 100%),
-        radial-gradient(circle at 80% 70%, rgba(242, 108, 79, 0.05) 0%, transparent 100%),
-        linear-gradient(45deg, rgba(78, 84, 200, 0.02) 0%, rgba(242, 108, 79, 0.02) 100%);
+      background: radial-gradient(circle at 20% 30%,
+          rgba(78, 84, 200, 0.05) 0%,
+          transparent 100%),
+        radial-gradient(circle at 80% 70%,
+          rgba(242, 108, 79, 0.05) 0%,
+          transparent 100%),
+        linear-gradient(45deg,
+          rgba(78, 84, 200, 0.02) 0%,
+          rgba(242, 108, 79, 0.02) 100%);
       z-index: 0;
     }
 
@@ -1207,7 +1290,7 @@
     }
 
     .project h4 {
-      font-family: 'Pacifico', cursive;
+      font-family: "Pacifico", cursive;
       text-align: center;
       font-size: 2rem;
       margin-bottom: 1rem;
@@ -1228,11 +1311,10 @@
       }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-
   <div class="preloader">
     <div class="loader-container">
       <div class="loader-circle"></div>
@@ -1282,43 +1364,57 @@
         <div class="col-md-6">
           <div class="intro">
             <p class="title">-INTRODUCTION</p>
-            <p class="hi">Hi There!👋</p>
-            <h1 class="my-name">I'm <span>Joy Patel</span></h1>
-            <p class="slogun">love to design & develop Websites</p>
-            <p class="slogun">I have gained extensive experience and I have demonstrated my abilities through various
-              projects, including an animated website, an E-commerce Website, a landing page, and a personal portfolio.
+            <p class="hi">
+              🚀 Elevating Digital Experiences – One Pixel at a Time!
             </p>
-            <br>
+            <h1 class="my-name">
+              Welcome to my creative space! <br />
+              <span>I’m Joy Patel</span>
+            </h1>
+            <p class="slogun">Love to design & develop Websites</p>
+            <p class="slogun">
+              A passionate Web Designer & Front-End Developer who thrives on
+              crafting visually stunning and seamlessly functional websites.
+              With a blend of creativity and technical expertise, I transform
+              ideas into dynamic, interactive, and user-friendly digital
+              experiences. Whether it's designing sleek UI, optimizing SEO, or
+              coding fluid animations, I ensure every project is built with
+              precision and innovation.
+            </p>
             <a href="#contactMe" class="homeBtn">Let's create an awesome website !</a>
             <div class="social-media">
               <a href="https://www.linkedin.com/in/joypatel12/"><img src="./img/LinkedIn Circled.png"
-                  alt="linkedin"></a>
-              <a href="https://x.com/Joy20112001"> <img src="img/twt2.png" alt="twitter"></a>
-              <a href="https://github.com/j2445"><img src="./img/GitHub.png" alt="github"></a>
+                  alt="linkedin" /></a>
+              <a href="https://x.com/Joy20112001">
+                <img src="img/twt2.png" alt="twitter" /></a>
+              <a href="https://github.com/j2445"><img src="./img/GitHub.png" alt="github" /></a>
+              <br />
             </div>
           </div>
         </div>
-        <div class="col-md-6 pb-0 img" style="padding: 70px;">
+        <div class="col-md-6 pb-0 img" style="padding: 70px">
           <div class="profile-container">
-            <img src="img/joy.webp" alt="" srcset="" class="profile-img">
+            <img src="img/joy.webp" alt="" srcset="" class="profile-img" />
+            <br />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <span><br></span>
-  <div id="project" class="section">
+  <div id="project" class="second-section">
     <div class="container-fluid">
       <p class="title">-PROJECTS</p>
       <div class="poject-section">
         <h2>FEATURED WORK</h2>
-        <p class="para">I love making websites that can grow big, finding useful solutions, and always learning to get
-          better in the IT world.</p>
+        <p class="para">
+          I love making websites that can grow big, finding useful solutions,
+          and always learning to get better in the IT world.
+        </p>
       </div>
       <div class="project-grid">
         <div class="project">
           <h4>Hoverboard Project</h4>
-          <img src="img/project01.png" alt="Hoverboard Project">
+          <img src="img/project01.png" alt="Hoverboard Project" />
           <div class="layer">
             <a href="https://hoverboard-khaki.vercel.app" target="_blank">Demo</a>
             <a href="https://github.com/your-username/hoverboard" target="_blank">Code</a>
@@ -1326,7 +1422,7 @@
         </div>
         <div class="project">
           <h4>Todo List Project</h4>
-          <img src="img/project02.png" alt="Todo List Project">
+          <img src="img/project02.png" alt="Todo List Project" />
           <div class="layer">
             <a href="https://todo-list-sepia-one-54.vercel.app" target="_blank">Demo</a>
             <a href="https://github.com/your-username/todo-list" target="_blank">Code</a>
@@ -1334,7 +1430,7 @@
         </div>
         <div class="project">
           <h4>Theme Clock Project</h4>
-          <img src="img/project03.png" alt="Theme Clock Project">
+          <img src="img/project03.png" alt="Theme Clock Project" />
           <div class="layer">
             <a href="https://theme-clock-nine-tau.vercel.app" target="_blank">Demo</a>
             <a href="https://github.com/your-username/theme-clock" target="_blank">Code</a>
@@ -1342,7 +1438,7 @@
         </div>
         <div class="project">
           <h4>Split Landing Page</h4>
-          <img src="img/project04.png" alt="Split Landing Page">
+          <img src="img/project04.png" alt="Split Landing Page" />
           <div class="layer">
             <a href="https://split-landing-page-orpin.vercel.app" target="_blank">Demo</a>
             <a href="https://github.com/your-username/split-landing" target="_blank">Code</a>
@@ -1350,7 +1446,7 @@
         </div>
         <div class="project">
           <h4>Portfolio Website</h4>
-          <img src="img/project05.png" alt="Portfolio Website">
+          <img src="img/project05.png" alt="Portfolio Website" />
           <div class="layer">
             <a href="https://website-animated-phi.vercel.app" target="_blank">Demo</a>
             <a href="https://github.com/your-username/portfolio" target="_blank">Code</a>
@@ -1358,7 +1454,7 @@
         </div>
         <div class="project">
           <h4>E-commerce Store</h4>
-          <img src="img/project06.png" alt="E-commerce Store">
+          <img src="img/project06.png" alt="E-commerce Store" />
           <div class="layer">
             <a href="https://j2445.github.io/ecommers-store/" target="_blank">Demo</a>
             <a href="https://github.com/j2445/ecommers-store" target="_blank">Code</a>
@@ -1366,7 +1462,7 @@
         </div>
         <div class="project">
           <h4>Meta Record Label Website</h4>
-          <img src="img/project07.png" alt="Meta Record Label Website">
+          <img src="img/project07.png" alt="Meta Record Label Website" />
           <div class="layer">
             <a href="https://j2445.github.io/MetaRL-Website/" target="_blank">Demo</a>
             <a href="https://github.com/j2445/MetaRL-Website" target="_blank">Code</a>
@@ -1374,7 +1470,7 @@
         </div>
         <div class="project">
           <h4>Image Scrolling Gallery</h4>
-          <img src="img/project08.png" alt="Image Scrolling Gallery">
+          <img src="img/project08.png" alt="Image Scrolling Gallery" />
           <div class="layer">
             <a href="https://j2445.github.io/image-scrolling/" target="_blank">Demo</a>
             <a href="https://github.com/j2445/image-scrolling" target="_blank">Code</a>
@@ -1382,7 +1478,7 @@
         </div>
         <div class="project">
           <h4>Horizontal Scrolling Project</h4>
-          <img src="img/project09.png" alt="Horizontal Scrolling Project">
+          <img src="img/project09.png" alt="Horizontal Scrolling Project" />
           <div class="layer">
             <a href="https://j2445.github.io/Horizontal-Scrolling/" target="_blank">Demo</a>
             <a href="https://github.com/j2445/Horizontal-Scrolling" target="_blank">Code</a>
@@ -1391,144 +1487,165 @@
       </div>
     </div>
   </div>
-  <div id="service" class="section bg">
+  <div id="service" class="third-section">
     <div class="container-fluid">
       <p class="title">-SERVICES</p>
       <div class="poject-section">
         <h2>SERVICES I PROVIDE</h2>
-        <p class="para">The goal is not to build a website. The goal is to build your business.</p>
+        <p class="para">
+          The goal is not to build a website. The goal is to build your
+          business.
+        </p>
       </div>
       <div class="services">
         <div class="service-section">
           <div class="service">
-            <img src="./img/uiux.png" alt="ui/ux design">
+            <img src="./img/uiux.png" alt="ui/ux design" />
             <h3>UI/UX Design</h3>
-            <p>I work with certain design tools to create high-fidelity designs and prototypes. I design accessible and
-              usable products which aid business growth.</p>
+            <p>
+              I work with certain design tools to create high-fidelity designs
+              and prototypes. I design accessible and usable products which
+              aid business growth.
+            </p>
           </div>
         </div>
         <div class="service-section">
           <div class="service">
-            <img src="./img/Web Design.png" alt="ui/ux design">
+            <img src="./img/Web Design.png" alt="ui/ux design" />
             <h3>Web Development</h3>
-            <p>I use various web technologies to develop attractive websites which converts visitors to customers. I
-              develop creative and responsive website layouts.</p>
+            <p>
+              I use various web technologies to develop attractive websites
+              which converts visitors to customers. I develop creative and
+              responsive website layouts.
+            </p>
           </div>
         </div>
         <div class="service-section">
           <div class="service">
-            <img src="./img/WordPress.png" alt="ui/ux design">
+            <img src="./img/WordPress.png" alt="ui/ux design" />
             <h3>Wordpress</h3>
-            <p>WordPress is a free and open-source content management system written in PHP and paired with a MySQL or
-              MariaDB database with supported HTTPs.
             <p>
+              WordPress is a free and open-source content management system
+              written in PHP and paired with a MySQL or MariaDB database with
+              supported HTTPs.
+            </p>
+
+            <p></p>
           </div>
         </div>
         <div class="service-section">
           <div class="service">
-            <img src="./img/Google.png" alt="ui/ux design">
+            <img src="./img/Google.png" alt="ui/ux design" />
             <h3>Google AD's</h3>
-            <p>Grow your business with Google Ads · Get in front of customers when they're searching for businesses like
-              yours on Google Search and Maps.
             <p>
+              Grow your business with Google Ads · Get in front of customers
+              when they're searching for businesses like yours on Google
+              Search and Maps.
+            </p>
+
+            <p></p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="skill" class="section">
+  <div id="skill" class="four-section">
     <div class="container-fluid">
       <p class="title">-SKILLS</p>
       <div class="skill-section">
         <h2>AREA OF EXPERTISE</h2>
-        <p class="para">Let's kickstart your project and collaborate to build something amazing. I'll bring my skills to
-          make your next project shine.</p>
+        <p class="para">
+          Let's kickstart your project and collaborate to build something
+          amazing. I'll bring my skills to make your next project shine.
+        </p>
       </div>
       <div class="skills">
         <div class="skill border1 border_right">
           <div class="items">
-            <img src="./img/html.png" alt="">
+            <img src="./img/html.png" alt="" />
             <p>HTML</p>
           </div>
         </div>
         <div class="skill border1">
           <div class="items">
-            <img src="./img/css.png" alt="">
+            <img src="./img/css.png" alt="" />
             <p>CSS</p>
           </div>
         </div>
         <div class="skill border1 border3">
           <div class="items">
-            <img src="./img/javascript (1).png" alt="">
+            <img src="./img/javascript (1).png" alt="" />
             <p>JAVASCRIPT</p>
           </div>
         </div>
         <div class="skill border1">
           <div class="items">
-            <img src="./img/Bootstrap 1.png" alt="">
+            <img src="./img/Bootstrap 1.png" alt="" />
             <p>BOOTSTRAP</p>
           </div>
         </div>
         <div class="skill border1 border_right">
           <div class="items">
-            <img src="./img/node-js.png" alt="">
+            <img src="./img/node-js.png" alt="" />
             <p>Node.js</p>
           </div>
         </div>
         <div class="skill border1">
           <div class="items">
-            <img src="./img/react (2).png" alt="">
+            <img src="./img/react (2).png" alt="" />
             <p>React</p>
           </div>
         </div>
         <div class="skill border1 border_right border7">
           <div class="items">
-            <img src="./img/git (2).png" alt="">
+            <img src="./img/git (2).png" alt="" />
             <p>Git</p>
           </div>
         </div>
         <div class="skill border1">
           <div class="items">
-            <img src="./img/github (7).png" alt="">
+            <img src="./img/github (7).png" alt="" />
             <p>GitHub</p>
           </div>
         </div>
         <div class="skill border_bottom borderSL">
           <div class="items">
-            <img src="./img/adobe-xd.png" alt="">
+            <img src="./img/adobe-xd.png" alt="" />
             <p>Adobe XD</p>
           </div>
         </div>
         <div class="skill border2 border10">
           <div class="items">
-            <img src="./img/photoshop.png" alt="">
+            <img src="./img/photoshop.png" alt="" />
             <p>Photoshop</p>
           </div>
         </div>
         <div class="skill border_right">
           <div class="items">
-            <img src="./img/icons8-figma-512.png" alt="">
+            <img src="./img/icons8-figma-512.png" alt="" />
             <p>Figma</p>
           </div>
         </div>
         <div class="skill">
           <div class="items">
-            <img src="./img/WordPress.png" alt="">
+            <img src="./img/WordPress.png" alt="" />
             <p>WordPress</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="section">
+  <div class="five-section">
     <div class="container-fluid bg rounded text-center pb-5 pos-relative">
-      <img src="./img/Rocket1.png" alt="">
+      <img src="./img/Rocket1.png" alt="" />
       <h1 class="custom-h1">HAVE A PROJECT IN MIND?</h1>
-      <p class="para p-4">Turn your dream website into reality with us. Let's get started!</p>
+      <p class="para p-4">
+        Turn your dream website into reality with us. Let's get started!
+      </p>
       <a href="#contactMe" class="homeBtn">Let's create an awesome website</a>
     </div>
   </div>
-  <div id="About" class="section bg">
+  <div id="About" class="six-section">
     <div class="container-fluid">
       <p class="title">-ABOUT</p>
       <div class="About-section">
@@ -1536,44 +1653,66 @@
         <div class="row img-sec">
           <div class="col-md-6">
             <p class="para">
-              I'm Joy Patel, a junior Web Designer with front-end development skills. I'm enthusiastic about using my
-              varied experiences to solve complex problems and craft enjoyable user experiences. My expertise lies in
-              web development, front-end web development, UI design, and SEO analytics.
-              <br> <br>
-              I develop websites with HTML, CSS and JavaScript. I have top skills in using design softwares like vscode,
-              Adobe XD, and PhotoShop.
-              <br> <br>
+              👋 Hey there! I'm Joy Patel I'm a Junior Web Designer with a
+              passion for crafting engaging and seamless user experiences.
+              With a strong foundation in front-end development and UI/UX
+              design, I bring ideas to life with clean, efficient, and
+              visually stunning websites.<br />
+              <br />
+              💡 What I Do: <br />
+              🚀 Front-End Development – I build dynamic, responsive, and
+              interactive websites using HTML, CSS, and JavaScript.<br />
+              🎨 UI/UX Design – I create intuitive and aesthetically pleasing
+              designs using Adobe XD, Photoshop, and other design tools.<br />
+              📈 SEO & Analytics – I optimize websites for better search
+              rankings and analyze performance data to improve user
+              engagement.<br />
+              <br />
+              🛠 Tech Stack: VS Code, Adobe XD, Figma, Photoshop, Bootstrap,
+              Tailwind CSS<br />
+              <br />
+              🌟 Why Work With Me?<br />
+              ✔️ Passionate about solving complex problems through design &
+              code<br />
+              ✔️ Focused on user-friendly & accessible web solutions<br />
+              ✔️ Always learning & improving to stay ahead in web trends<br />
+              <br />
+              Let's create something amazing together! 🚀🎨💻
+              <br />
             </p>
-            <br>
+            <br />
             <a href="#contactMe" class="homeBtn">HIRE ME</a>
             <a href="cv/cv.pdf" download="JOY PATEL CV" class="my-cv">Download CV</a>
           </div>
           <div class="col-md-6 img-sec text-center">
             <div class="profile-container">
-              <img src="img/about.webp" alt="profile" class="profile-img">
+              <img src="img/about.webp" alt="profile" class="profile-img" />
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="contactMe" class="section">
+  <div id="contactMe" class="seven-section">
     <div class="container-fluid">
       <p class="title">-CONTACT</p>
       <div class="contact-section">
         <h2>GET IN TOUCH</h2>
-        <p class="para">I'm here and ready to bring your project ideas to life. Just a click away!</p>
+        <p class="para">
+          I'm here and ready to bring your project ideas to life. Just a click
+          away!
+        </p>
         <div class="row img-sec justify-content-center">
           <div class="col-md-6">
             <div class="form">
               <form method="post"
                 action="https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec"
                 name="contact-form">
-                <input type="text" name="your-name" placeholder="Name" required><br>
-                <input type="text" name="your-number" placeholder="Number" required><br>
-                <input type="email" name="your-email" placeholder="Email" required><br>
-                <textarea name="message" rows="7" placeholder="Your Message" required></textarea><br>
-                <input type="submit" value="Submit" id="submit">
+                <input type="text" name="your-name" placeholder="Name" required /><br />
+                <input type="text" name="your-number" placeholder="Number" required /><br />
+                <input type="email" name="your-email" placeholder="Email" required /><br />
+                <textarea name="message" rows="7" placeholder="Your Message" required></textarea><br />
+                <input type="submit" value="Submit" id="submit" />
               </form>
             </div>
           </div>
@@ -1581,57 +1720,57 @@
       </div>
     </div>
   </div>
-  <main-footer></main-footer>
   <div class="footer-bottom">Design by: JOY PATEL</div>
   <button class="back-to-top" type="button"></button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec';
-    const form = document.forms['contact-form'];
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec";
+    const form = document.forms["contact-form"];
 
-    form.addEventListener('submit', e => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       fetch(scriptURL, {
-        method: 'POST',
-        body: new FormData(form)
+        method: "POST",
+        body: new FormData(form),
       })
-        .then(response => {
+        .then((response) => {
           alert("Thank you! your form is submitted successfully.");
           window.location.reload();
         })
-        .catch(error => console.error('Error!', error.message));
+        .catch((error) => console.error("Error!", error.message));
     });
   </script>
 
   <script>
     const amountScrolled = 200;
-    const btnBackToTop = document.querySelector('.back-to-top');
+    const btnBackToTop = document.querySelector(".back-to-top");
 
-    const backToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    const backToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
     const toggleBtnBackToTop = () => {
       if (window.scrollY > amountScrolled) {
-        btnBackToTop.classList.add('back-to-top_show');
+        btnBackToTop.classList.add("back-to-top_show");
       } else {
-        btnBackToTop.classList.remove('back-to-top_show');
+        btnBackToTop.classList.remove("back-to-top_show");
       }
     };
 
-    btnBackToTop.addEventListener('click', backToTop);
-    window.addEventListener('scroll', toggleBtnBackToTop);
+    btnBackToTop.addEventListener("click", backToTop);
+    window.addEventListener("scroll", toggleBtnBackToTop);
 
-    window.addEventListener('load', function () {
-      const preloader = document.querySelector('.preloader');
+    window.addEventListener("load", function () {
+      const preloader = document.querySelector(".preloader");
 
       setTimeout(() => {
-        preloader.style.opacity = '0';
+        preloader.style.opacity = "0";
         setTimeout(() => {
-          preloader.style.display = 'none';
+          preloader.style.display = "none";
         }, 500);
       }, 3000); // Shows preloader for 3 seconds
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
 </body>
