@@ -953,13 +953,15 @@ span {
     .portfolio .portfolio-container {
         grid-template-columns: 1fr;
     }
+    .languages-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
 }
 
 @media (max-width: 450px) {
 
-    .languages-container {
-        grid-template-columns: 1fr;
-    }
     
     html {
         font-size: 50%;
@@ -967,6 +969,12 @@ span {
 
     #darkMode-icon {
         right: 6rem;
+    }
+
+    .languages-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
     }
 
     .home .profession-box .profession:nth-child(1) {
@@ -1007,11 +1015,21 @@ span {
     .about-img img {
         width: 90vw;
     }
+    .languages-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
 }
 
 @media (max-width: 315px) {
     .home-content h1 {
         font-size: 4.5rem;
+    }
+    .languages-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
     }
 }
 
@@ -1019,10 +1037,10 @@ img {
     border-radius: 20px;
 }
 
-/* Add this to your existing CSS */
+
 .languages-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 20px;
 }
