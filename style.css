@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
+body, html {
+    overflow-x: hidden;
+}
+
+.languages-container, .services-container, .portfolio-container, .testimonial-container {
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+.header, .footer, .home-content, .about-content {
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
 * {
     margin: 0;
     padding: 0;
