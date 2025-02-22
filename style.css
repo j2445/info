@@ -770,6 +770,18 @@ span {
 }
 
 @media (max-width: 768px) {
+
+    .languages-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .language-box {
+        text-align: center;
+        padding: 10px;
+    }
+
     #menu-icon {
         display: block;
     }
@@ -781,6 +793,7 @@ span {
         color: var(--text-color);
         margin-bottom: .1rem;
     }
+
 
     .navbar {
         position: absolute;
@@ -926,6 +939,11 @@ span {
 }
 
 @media (max-width: 450px) {
+
+    .languages-container {
+        grid-template-columns: 1fr;
+    }
+    
     html {
         font-size: 50%;
     }
