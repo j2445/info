@@ -19,6 +19,22 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
+
+    <div id="initialPreloader">
+        <h1 style="font-family: 'Lobster', cursive; font-size: 60px; text-align: center; color: #3498db; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);">
+            Wellcome to my portfolio
+          </h1>
+      </div>
+
+    <script>
+        window.addEventListener("load", function() {
+      setTimeout(function() {
+        document.getElementById("initialPreloader").style.display = "none";
+        document.getElementById("home").classList.add("visible");
+      }, 3000);
+    });
+      </script>
 
     <script src="https://unpkg.com/scrollreveal"></script>
 
@@ -90,7 +106,7 @@
         </div>
 
         <div class="home-img">
-            <img src="img/about.webp" alt="" />
+            <img src="img/about.webp" alt="home-img" />
         </div>
     </section>
 
@@ -434,23 +450,24 @@
         <h2 class="heading">Contact <span>Me!</span></h2>
         <form method="post"
             action="https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec"
-            name="contact-form">
+            name="contact-form" onsubmit="sendToWhatsApp(event)">
             <div class="input-box">
-                <input type="text" name="your-name" placeholder="Name" required />
+                <input type="text" name="your-name" id="name" placeholder="Name" required />
             </div>
             <br />
             <div class="input-box">
-                <input type="text" name="your-number" placeholder="Number" required />
+                <input type="text" name="your-number" id="phone" placeholder="Contact Number" required />
             </div>
             <div class="input-box">
-                <input type="email" name="your-email" placeholder="Email" required />
+                <input type="email" name="your-email" id="email" placeholder="Email" required />
             </div>
             <div class="input-box">
-                <input type="text" name="message" placeholder="Your Message" required><br />
+                <input type="text" name="message" id="message" placeholder="Message" required><br />
             </div>
             <input class="btn" type="submit" value="Send Message" id="submit" />
         </form>
     </section>
+    
 
     <!-- footer design -->
     <footer class="footer">
