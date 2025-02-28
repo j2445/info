@@ -393,7 +393,7 @@ section {
     bottom: 0;
     right: 40px;
     pointer-events: none;
-    max-width: 480px;
+    max-width: 300px;
     max-height: 100vh;
 }
 
@@ -978,8 +978,7 @@ span {
     }
 
     .about-img img {
-        width: 20vw;
-        margin-top: -2rem;
+        display: none;
     }
 
     .testimonial-container .testimonial-wrapper {
@@ -1024,7 +1023,7 @@ span {
         padding: 10px;
     }
     .about-img img {
-        width: 20vw;
+        display: none;
     }
 
     .home .profession-box .profession:nth-child(1) {
@@ -1063,7 +1062,7 @@ span {
 
 @media (max-width: 365px) {
     .about-img img {
-        width: 20vw;
+        display: none;
     }
     .languages-container {
         grid-template-columns: repeat(2, 1fr);
@@ -1077,7 +1076,7 @@ span {
         font-size: 4.5rem;
     }
     .about-img img {
-        width: 20vw;
+        display: none;
     }
     .languages-container {
         grid-template-columns: repeat(2, 1fr);
