@@ -75,7 +75,28 @@ navbar.classList.remove('active');
 
 };
 
+// Add this at the beginning of your script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Add animation delay to loading text
+    const loadingText = document.querySelectorAll('.loading-text span');
+    loadingText.forEach((span, index) => {
+        span.style.setProperty('--i', index + 1);
+    });
 
+    // Handle preloader
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.getElementById('home').classList.add('visible');
+            }, 500);
+        }, 3000);
+    });
+});
 /*========== swiper ==========*/
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,

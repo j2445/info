@@ -19,13 +19,30 @@
 </head>
 
 <body>
-    <div id="preloader"></div>
+    <div id="preloader">
+        <div class="loading-container">
+            <div class="loading-text">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Remove initialPreloader as we'll combine both into one -->
     <div id="initialPreloader">
+        <div class="loader"></div>
         <h1 style="font-family: 'Lobster', cursive; font-size: 60px; text-align: center; color: #3498db; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);">
-            Wellcome to my portfolio
-          </h1>
-      </div>
+            Loading...
+        </h1>
+    </div>
 
     <script>
         window.addEventListener("load", function() {

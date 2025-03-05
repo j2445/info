@@ -62,74 +62,62 @@ body {
 }
 
 /* Preloader styles */
-/* Full-screen preloader with liquid gradient and rotating spinner */
-
-
-#initialPreloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #4909f7, #1a1947, #3b4452, #e04271);
-    background-size: 400% 400%;
-    animation: gradientAnimation 6s ease infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3000;
-  }
-  @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  #initialPreloader h1 {
-    font-size: 3em;
-    color: #ffffff;
-    animation: bounce 2s infinite;
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, #ff6ec4, #7873f5, #66a6ff, #6efac8);
-    background-size: 300% 300%;
-    animation: gradientShift 6s ease infinite;
-    z-index: 2000;
-    display: none;
-    align-items: center;
+    background: var(--bg-color);
+    display: flex;
     justify-content: center;
-  }
+    align-items: center;
+    z-index: 9999;
+}
 
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+.loading-container {
+    text-align: center;
+}
 
-  #preloader::before {
-    content: "";
-    width: 80px;
-    height: 80px;
-    border: 8px solid rgba(255, 255, 255, 0.3);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
+.loading-text {
+    margin-bottom: 20px;
+}
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+.loading-text span {
+    display: inline-block;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--main-color);
+    animation: bounce 0.8s infinite alternate;
+    animation-delay: calc(0.1s * var(--i));
+}
 
+.loading-bar {
+    width: 300px;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: var(--main-color);
+    animation: progress 2.5s ease-in-out forwards;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes progress {
+    to {
+        width: 100%;
+    }
+}
 
   #home {
     opacity: 0;
