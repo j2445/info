@@ -170,8 +170,18 @@ function sendTelegramMessage(message) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Show the preloader
-  document.getElementById('preloader').style.display = 'flex';
+  // Show the submit preloader instead of main preloader
+  const submitPreloader = document.getElementById('submitPreloader');
+  submitPreloader.style.display = 'flex';
+  submitPreloader.style.position = 'fixed';
+  submitPreloader.style.top = '0';
+  submitPreloader.style.left = '0';
+  submitPreloader.style.width = '100%';
+  submitPreloader.style.height = '100%';
+  submitPreloader.style.backgroundColor = '#0a0a0a';
+  submitPreloader.style.zIndex = '9999';
+  submitPreloader.style.opacity = '1';
+  submitPreloader.style.transition = 'opacity 0.5s ease';
 
   // Extract form values from the input fields
   const name = document.querySelector('input[name="your-name"]').value;
@@ -179,10 +189,10 @@ form.addEventListener("submit", (e) => {
   const email = document.querySelector('input[name="your-email"]').value;
   const messageInput = document.querySelector('input[name="message"]').value;
 
-  // Generate timestamp (using the browser's locale format)
+  // Generate timestamp
   const timestamp = new Date().toLocaleString();
 
-  // Construct the Telegram message content with Markdown formatting
+  // Construct the Telegram message
   const telegramMessage = `*New Contact Form Submission*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Message:* ${messageInput}\n*Timestamp:* ${timestamp}`;
 
   // Send the Telegram message
@@ -194,56 +204,79 @@ form.addEventListener("submit", (e) => {
     body: new FormData(form)
   })
   .then(response => {
-    // Hide preloader after submission completes
-    document.getElementById('preloader').style.display = 'none';
-    form.reset();
-
-    // Create a modal for user confirmation
-    const backdrop = document.createElement('div');
-    backdrop.style.position = 'fixed';
-    backdrop.style.top = '0';
-    backdrop.style.left = '0';
-    backdrop.style.width = '100%';
-    backdrop.style.height = '100%';
-    backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    backdrop.style.zIndex = '999';
-    document.body.appendChild(backdrop);
-
-    const modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '50%';
-    modal.style.left = '50%';
-    modal.style.transform = 'translate(-50%, -50%)';
-    modal.style.backgroundColor = '#fff';
-    modal.style.padding = '30px';
-    modal.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
-    modal.style.borderRadius = '10px';
-    modal.style.zIndex = '1000';
-    modal.style.opacity = '0';
-    modal.style.transition = 'opacity 0.4s ease-in-out, transform 0.4s ease-in-out';
-    modal.style.transform = 'translate(-50%, -60%)';
-    modal.innerHTML = `
-      <p style="font-size: 20px; color: #333; margin-bottom: 20px;">Thank you! Your message has been sent.</p>
-      <div style="text-align: center;">
-        <button id="closeModal" style="padding: 12px 25px; background-color: #28a745; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Close</button>
-      </div>
-    `;
-    document.body.appendChild(modal);
-
-    // Fade-in effect for the modal
     setTimeout(() => {
-      modal.style.opacity = '1';
-      modal.style.transform = 'translate(-50%, -50%)';
-    }, 10);
+      submitPreloader.style.opacity = '0';
+      setTimeout(() => {
+        submitPreloader.style.display = 'none';
+        form.reset();
 
-    document.getElementById('closeModal').onclick = () => {
-      document.body.removeChild(modal);
-      document.body.removeChild(backdrop);
-    };
+        // Show thank you modal
+        const backdrop = document.createElement('div');
+        backdrop.style.position = 'fixed';
+        backdrop.style.top = '0';
+        backdrop.style.left = '0';
+        backdrop.style.width = '100%';
+        backdrop.style.height = '100%';
+        backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        backdrop.style.zIndex = '999';
+        document.body.appendChild(backdrop);
+
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '50%';
+        modal.style.left = '50%';
+        modal.style.transform = 'translate(-50%, -50%)';
+        modal.style.backgroundColor = '#fff';
+        modal.style.padding = '30px';
+        modal.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+        modal.style.borderRadius = '10px';
+        modal.style.zIndex = '1000';
+        modal.style.opacity = '0';
+        modal.style.transition = 'opacity 0.4s ease-in-out, transform 0.4s ease-in-out';
+        modal.style.transform = 'translate(-50%, -60%)';
+        modal.innerHTML = `
+          <p style="font-size: 20px; color: #333; margin-bottom: 20px;">Thank you! Your message has been sent.</p>
+          <div style="text-align: center;">
+            <button id="closeModal" style="padding: 12px 25px; background-color: #28a745; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Close</button>
+          </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Fade-in effect for the modal
+        setTimeout(() => {
+          modal.style.opacity = '1';
+          modal.style.transform = 'translate(-50%, -50%)';
+        }, 10);
+
+        document.getElementById('closeModal').onclick = () => {
+          document.body.removeChild(modal);
+          document.body.removeChild(backdrop);
+        };
+      }, 500);
+    }, 2000);
   })
   .catch(error => {
     console.error("Error submitting form data!", error.message);
-    // Hide preloader in case of error
-    document.getElementById('preloader').style.display = 'none';
+    submitPreloader.style.display = 'none';
   });
+});
+
+
+// Read More Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const moreText = this.previousElementSibling;
+            
+            if (moreText.style.display === 'none' || !moreText.style.display) {
+                moreText.style.display = 'block';
+                this.textContent = 'Read Less';
+            } else {
+                moreText.style.display = 'none';
+                this.textContent = 'Read More';
+            }
+        });
+    });
 });
