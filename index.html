@@ -19,45 +19,200 @@
 </head>
 
 <body>
-    <div id="preloader">
-        <div class="loading-container">
-            <div class="loading-text">
-                <span>L</span>
-                <span>O</span>
-                <span>A</span>
-                <span>D</span>
-                <span>I</span>
-                <span>N</span>
-                <span>G</span>
-            </div>
-            <div class="loading-bar">
-                <div class="progress"></div>
+<div id="preloader">
+    <div class="preloader-content">
+        <!-- Animated logo/brand -->
+        <div class="brand-animation">
+            <svg class="circular-text" viewBox="0 0 100 100">
+                <path id="curve" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                <text>
+                    <textPath href="#curve">
+                       --- WELCOME TO MY PORTFOLIO ---
+                    </textPath>
+                </text>
+            </svg>
+            <div class="center-logo">
+                <img src="img/logo.png" alt="My Logo" style="width: 50px; height: 50px;">
             </div>
         </div>
+        
+        <!-- Modern loading animation -->
+        <div class="loading-animation">
+            <div class="dot-elastic"></div>
+        </div>
+        
+        <!-- Loading progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">0%</div>
+        </div>
     </div>
+</div>
 
-    <!-- Remove initialPreloader as we'll combine both into one -->
-    <div id="initialPreloader">
-        <div class="loader"></div>
-        <h1 style="font-family: 'Lobster', cursive; font-size: 60px; text-align: center; color: #3498db; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);">
-            Loading...
-        </h1>
-    </div>
+<style>
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
-    <script>
-        window.addEventListener("load", function() {
-      setTimeout(function() {
-        document.getElementById("initialPreloader").style.display = "none";
-        document.getElementById("home").classList.add("visible");
-      }, 3000);
-    });
-      </script>
+.preloader-content {
+    text-align: center;
+}
 
+.brand-animation {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.circular-text {
+    width: 100%;
+    height: 100%;
+    animation: rotate 10s linear infinite;
+}
+
+.circular-text path {
+    fill: none;
+}
+
+.circular-text text {
+    fill: #3498db;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.dot-elastic {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #3498db;
+    animation: dot-elastic 1s infinite linear;
+    margin: 20px auto;
+}
+
+.dot-elastic::before,
+.dot-elastic::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #3498db;
+}
+
+.dot-elastic::before {
+    left: -15px;
+    animation: dot-elastic-before 1s infinite linear;
+}
+
+.dot-elastic::after {
+    left: 15px;
+    animation: dot-elastic-after 1s infinite linear;
+}
+
+.loading-progress {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    color: #3498db;
+    font-size: 14px;
+}
+
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes dot-elastic {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+@keyframes dot-elastic-before {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+@keyframes dot-elastic-after {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+</style>
+
+<script>
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    const progressFill = document.querySelector('.progress-fill');
+    const progressText = document.querySelector('.progress-text');
+    let progress = 0;
+    
+    const interval = setInterval(() => {
+        progress += 1;
+        progressFill.style.width = `${progress}%`;
+        progressText.textContent = `${progress}%`;
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    document.getElementById('home').classList.add('visible');
+                }, 500);
+            }, 500);
+        }
+    }, 30);
+});
+</script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- header design -->
     <header class="header">
-        <img src="img/logo.png" class="logo light-mode" id="logo" width="50" height="50">
+        <img src="img/logo.png" class="logo light-mode" id="logo" width="40" height="40">
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
@@ -69,21 +224,35 @@
 
         <div class="bx bx-moon" id="darkMode-icon"></div>
 
-
         <div class="bx bx-menu" id="menu-icon"></div>
     </header>
 
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello, I am</h3>
-            <h1>Joy Patel</h1>
+            <h3 class="animate__animated animate__fadeIn">👋 Hi there! I'm</h3>
+            <h1 class="animate__animated animate__fadeInUp">Joy Patel</h1>
             <p>
-                👋 Hey there! I'm Joy Patel I'm a Junior Web Designer with a passion
-                for crafting engaging and seamless user experiences. With a strong
-                foundation in front-end development and UI/UX design, I bring ideas to
-                life with clean, efficient, and visually stunning websites.
+                <span class="greeting-text" style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease">
+                    🚀 Greetings! I'm a passionate Web Designer and Digital Craftsman who thrives on turning creative visions into digital reality. Armed with cutting-edge skills in front-end development and an eye for pixel-perfect design, I specialize in building immersive digital experiences that not only look stunning but also deliver exceptional user engagement. From concept to code, I transform complex challenges into elegant, user-centric solutions that make a lasting impact. Let's create something extraordinary together! ✨
+                </span>
             </p>
+
+<script>
+// Add animation when preloader completes
+window.addEventListener('load', function() {
+    const interval = setInterval(() => {
+        if (document.querySelector('.progress-fill').style.width === '100%') {
+            setTimeout(() => {
+                const greetingText = document.querySelector('.greeting-text');
+                greetingText.style.opacity = '1';
+                greetingText.style.transform = 'translateY(0)';
+            }, 1000); // Start animation 1 second after preloader completes
+            clearInterval(interval);
+        }
+    }, 100);
+});
+</script>
 
             <div class="social-media">
                 <a href="https://www.facebook.com/Joy.patel.2"><i class="bx bxl-facebook"></i></a>
@@ -135,11 +304,21 @@
 
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
-            <h3>
-                👋 Hey there! I'm Joy Patel I'm a Junior Web Designer with a passion
-                for crafting engaging and seamless user experiences. With a strong
-                foundation in front-end development and UI/UX design, I bring ideas to
-                life with clean, efficient, and visually stunning websites.
+            <h3 style="text-align: justify;">
+                👋 Greetings! I'm Joy Patel, a passionate Full-Stack Web Developer and Digital Solutions Architect with 
+                a proven track record of creating exceptional digital experiences. As a certified web professional with 
+                expertise in modern technologies, I specialize in crafting innovative, user-centric solutions that 
+                seamlessly blend creativity with functionality.
+
+                With over 3 years of hands-on experience in front-end and back-end development, I've successfully 
+                delivered numerous projects that combine cutting-edge technology with intuitive design. My approach 
+                integrates clean code architecture, responsive design principles, and performance optimization to create 
+                websites that not only look stunning but also drive real business results.
+
+                I take pride in transforming complex challenges into elegant, scalable solutions while staying current 
+                with emerging technologies and industry best practices. Whether it's building dynamic web applications, 
+                implementing robust e-commerce solutions, or optimizing user experiences, I'm committed to delivering 
+                excellence in every project.
             </h3>
             <div class="more-text" style="display: none;">
                 <p>
@@ -488,15 +667,14 @@
 
     <!-- footer design -->
     <footer class="footer">
-        <div class="footer-text">
-            <p> Thank you for visiting my personal portfolio website. Keep Rising 🚀<br>
-                Copyright &copy; 2025 | All Rights Reserved.<br />
-                Design & Develop by JOY PATEL
-            </p>
+        <div class="footer-text" style="text-align: center;">
+            <p class="footer-message" style="margin: 10px 0;">Thank you for exploring my portfolio. Let's create something amazing together! 🚀</p>
+            <p class="copyright" style="margin: 10px 0;">Copyright &copy; 2025 | All Rights Reserved</p>
+            <p class="credits" style="margin: 10px 0;">Designed & Developed with <i class='bx bxs-heart' style='color:#3498db'></i> by JOY PATEL</p>
         </div>
 
-        <div class="footer-iconTop">
-            <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+        <div class="footer-iconTop" style="text-align: center; margin-top: 15px;">
+            <a href="#home" style="display: inline-block;"><i class="bx bx-up-arrow-alt"></i></a>
         </div>
     </footer>
 
@@ -505,21 +683,47 @@
 
     <!-- custom js -->
     <script src="script.js"></script>
-    <script>
 
-        document.querySelectorAll('.read-more-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const moreText = button.previousElementSibling;
-                if (moreText.style.display === 'none') {
-                    moreText.style.display = 'block';
-                    button.textContent = 'Read Less';
-                } else {
-                    moreText.style.display = 'none';
-                    button.textContent = 'Read More';
-                }
-            });
-        });
-    </script>
+
+    <div id="submitPreloader" style="display: none;">
+        <div class="preloader-content" style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        ">
+            <div class="brand-animation" style="
+                width: 100%;
+                max-width: 200px;
+                aspect-ratio: 1;
+                margin: 0 auto;
+            ">
+                <svg class="circular-text" viewBox="0 0 100 100">
+                    <path id="submitCurve" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                    <text>
+                        <textPath href="#submitCurve">
+                           --- SENDING YOUR MESSAGE ---
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="center-logo">
+                    <img src="img/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+                </div>
+            </div>
+            <div class="loading-animation">
+                <div class="dot-elastic"></div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
