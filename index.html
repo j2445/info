@@ -8,6 +8,11 @@
     <link rel="icon" href="img/logo.png" />
     <title>JOY Portfolio</title>
 
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="Music.mp3" type="audio/mp3">
+    </audio>
+
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
@@ -19,6 +24,7 @@
 </head>
 
 <body>
+
 <div id="preloader">
     <div class="preloader-content">
         <!-- Animated logo/brand -->
@@ -184,35 +190,42 @@
 </style>
 
 <script>
-window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    const progressFill = document.querySelector('.progress-fill');
-    const progressText = document.querySelector('.progress-text');
-    let progress = 0;
-    
-    const interval = setInterval(() => {
-        progress += 1;
-        progressFill.style.width = `${progress}%`;
-        progressText.textContent = `${progress}%`;
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const progressFill = document.querySelector('.progress-fill');
+        const progressText = document.querySelector('.progress-text');
+        const music = document.getElementById('bgMusic');
+        let progress = 0;
         
-        if (progress >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-                preloader.style.opacity = '0';
+        // Start playing music immediately
+        music.play().catch(function(error) {
+            console.log("Audio autoplay failed:", error);
+        });
+        
+        const interval = setInterval(() => {
+            progress += 1;
+            progressFill.style.width = `${progress}%`;
+            progressText.textContent = `${progress}%`;
+            
+            if (progress >= 100) {
+                clearInterval(interval);
                 setTimeout(() => {
-                    preloader.style.display = 'none';
-                    document.getElementById('home').classList.add('visible');
+                    preloader.style.opacity = '0';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                        document.getElementById('home').classList.add('visible');
+                    }, 500);
                 }, 500);
-            }, 500);
-        }
-    }, 30);
-});
-</script>
+            }
+        }, 30);
+    });
+    </script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- header design -->
     <header class="header">
         <img src="img/logo.png" class="logo light-mode" id="logo" width="40" height="40">
+        
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
