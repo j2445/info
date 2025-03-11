@@ -172,7 +172,7 @@ body {
 }
 
 .header.sticky .navbar a.active {
-    color: var(--black-color);
+    color: var(--main-color);
 }
 
 .navbar a.active::before {
@@ -182,7 +182,7 @@ body {
     bottom: -6px;
     width: 100%;
     height: .2rem;
-    background: var(--white-color);
+    background: var(--main-color);
 }
 
 .header.sticky .navbar a::before {
@@ -394,11 +394,11 @@ section {
 
 .home-img img {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     right: 40px;
     pointer-events: none;
-    max-width: 300px;
-    max-height: 100vh;
+    max-width: 450px;
+    max-height: 450px;
 }
 
 span {
@@ -995,8 +995,11 @@ img {
     }
 
     .home {
-        padding: 0 3% 23rem;
+        padding: 0 3% 30rem;
   
+    }
+    .home-content {
+        padding-top: 2rem;
     }
 
     .header {
@@ -1014,9 +1017,13 @@ img {
     }
 
     .home-content .social-media a {
-        margin: 12rem 1rem 3rem;
+        margin: 2rem 1rem 3rem;  /* Adjusted margins */
     }
 
+    .btn {
+        margin-top: 2rem;
+    }
+    
     .home .profession-container {
         left: 0;
         width: 100%;
@@ -1025,7 +1032,7 @@ img {
 
     .home .profession-container .profession-box {
         position: fixed;
-        top: 60vh;  /* Adjusted from 450px to be more responsive */
+        top: 45vh;  /* Adjusted from 450px to be more responsive */
         left: 0;
         width: 100%;
     }
@@ -1065,12 +1072,12 @@ img {
 
     .home .profession-container .overlay {
         position: fixed;
-        top: 50px;  /* Adjusted from 65rem to be more responsive */
+        top: 80vh;  /* Adjusted from 65rem to be more responsive */
         left: 50%;
         right: 0;
         transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
         border-width: 23.9rem;
-        margin-top: 120px;
+        margin-top: 0;
     }
     .home-img img {
         display: none;
@@ -1187,57 +1194,48 @@ img {
     }
 }
 
-
 @media screen and (max-width: 375px) {
-
-    
-    html {
-        font-size: 50%;
+    .home {
+        padding: 0 3% 10rem;
+        min-height: 100vh;
     }
 
-    #darkMode-icon {
-        right: 6rem;
+    .home-content {
+        padding-top: 0;
+        text-align: center;
+        margin-bottom: 0.3rem;
     }
 
-    .languages-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 10px;
-    }
-    .about-img img {
-        display: none;
+    .home-content h3 {
+        font-size: 2.2rem;
+        margin-bottom: 0.2rem;
     }
 
-    .home .profession-box .profession:nth-child(1) {
-        transform: rotate(-90deg) translate(-110px, -220px);
+    .home-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 0.2rem;
     }
 
-    .home .profession-box .profession:nth-child(2) {
-        transform: rotate(0deg) translate(5px, -325px);
+    .home-content p {
+        font-size: 1.4rem;
+        margin: 0.2rem 0;
     }
 
-    .home .profession-box .profession:nth-child(3) {
-        transform: rotate(90deg) translate(-105px, -440px);
+    .home-content .social-media a {
+        margin: 0.5rem 1rem;
     }
 
-    .home .profession-box .profession:nth-child(4) {
-        transform: rotate(180deg) translate(-210px, -325px);
+    .btn {
+        margin-top: 1rem;  /* Increased from 5rem to move button further down */
+    }
+
+    .home .profession-container .profession-box {
+        top: 75%;
+        transform: scale(0.85);
     }
 
     .home .profession-container .overlay {
-        top: 70%;
-    }
-
-    .contact form .input-box input {
-        width: 100%;
-    }
-
-    .footer {
-        flex-direction: column-reverse;
-    }
-
-    .footer p {
-        text-align: center;
-        margin-top: 2rem;
+        top: 75%;
+        border-width: 18rem;
     }
 }
