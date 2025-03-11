@@ -9,7 +9,7 @@
     <title>JOY Portfolio</title>
 
     <!-- Audio Element -->
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" loop muted autoplay>
         <source src="Music.mp3" type="audio/mp3">
     </audio>
 
@@ -220,6 +220,30 @@
         }, 30);
     });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('bgMusic');
+            music.muted = false; // Unmute after page loads
+            
+            // Try to play on any user interaction
+            function playAudio() {
+                music.play()
+                    .then(() => {
+                        // Successfully playing
+                        document.removeEventListener('touchstart', playAudio);
+                        document.removeEventListener('click', playAudio);
+                    })
+                    .catch(error => {
+                        console.log("Playback failed:", error);
+                    });
+            }
+        
+            // Listen for both touch and click events
+            document.addEventListener('touchstart', playAudio);
+            document.addEventListener('click', playAudio);
+        });
+        </script>
+    
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- header design -->
