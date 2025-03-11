@@ -995,11 +995,8 @@ img {
     }
 
     .home {
-        padding: 0 3% 30rem;
+        padding: 0 3% 23rem;
   
-    }
-    .home-content {
-        padding-top: 2rem;
     }
 
     .header {
@@ -1017,13 +1014,9 @@ img {
     }
 
     .home-content .social-media a {
-        margin: 2rem 1rem 3rem;  /* Adjusted margins */
+        margin: 12rem 1rem 3rem;
     }
 
-    .btn {
-        margin-top: 2rem;
-    }
-    
     .home .profession-container {
         left: 0;
         width: 100%;
@@ -1032,7 +1025,7 @@ img {
 
     .home .profession-container .profession-box {
         position: fixed;
-        top: 45vh;  /* Adjusted from 450px to be more responsive */
+        top: 60vh;  /* Adjusted from 450px to be more responsive */
         left: 0;
         width: 100%;
     }
@@ -1072,12 +1065,12 @@ img {
 
     .home .profession-container .overlay {
         position: fixed;
-        top: 80vh;  /* Adjusted from 65rem to be more responsive */
+        top: 50px;  /* Adjusted from 65rem to be more responsive */
         left: 50%;
         right: 0;
         transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
         border-width: 23.9rem;
-        margin-top: 0;
+        margin-top: 120px;
     }
     .home-img img {
         display: none;
@@ -1237,5 +1230,120 @@ img {
     .home .profession-container .overlay {
         top: 75%;
         border-width: 18rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .home .profession-container .profession-box {
+        right: -35%;
+    }
+
+    .home .profession-container .overlay {
+        right: -30%;
+    }
+}
+
+@media screen and (min-width: 581px) and (max-width: 768px) {
+    .home {
+        padding: 0 3% 23rem;
+    }
+
+    .home .profession-container .profession-box {
+        position: fixed;
+        top: 44vh;
+        left: 0;
+        width: 100%;
+    }
+
+    .home .profession-box .circle {
+        position: fixed;
+        width: 700px;
+        height: 700px;
+        z-index: -1;
+    }
+
+    .home .profession-container .overlay {
+        position: fixed;
+        top: 80vh;
+        left: 50%;
+        right: 0;
+        transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
+        border-width: 23.9rem;
+        margin-top: 0;
+    }
+}
+@media screen and (width: 540px) {
+    .home {
+        padding: 5rem 3% 23rem;
+    }
+
+    .home-content {
+        padding-top: 8rem;
+        text-align: center;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
+        margin: 1rem 0;
+    }
+
+    .home-content .social-media a {
+        margin: 2rem 1rem;
+    }
+
+    .btn {
+        margin-top: 270px;
+        margin-left: 70px;
+    }
+
+    .home .profession-container .profession-box {
+        position: fixed;
+        top: 68vh; 
+        width: 700px;
+        height: 700px;
+        left: -80px;
+    }
+
+    .home .profession-box .circle {
+        position: fixed;
+        width: 700px; 
+        height: 700px;
+        z-index: -1;
+    }
+
+    .home .profession-box .profession:nth-child(1) {
+        transform: rotate(-90deg) translate(-120px, -210px);
+    }
+
+    .home .profession-box .profession:nth-child(2) {
+        transform: rotate(0deg) translate(0, -335px);
+    }
+
+    .home .profession-box .profession:nth-child(3) {
+        transform: rotate(90deg) translate(-115px, -450px);
+    }
+
+    .home .profession-box .profession:nth-child(4) {
+        transform: rotate(180deg) translate(-220px, -335px);
+    }
+
+    .home .profession-container .overlay {
+        position: fixed;
+        top: 88vh; 
+        left: 50%;
+        right: 0;
+        transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
+        border-width: 23.9rem; 
+        margin-top: 0;
     }
 }
