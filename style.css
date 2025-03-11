@@ -527,7 +527,7 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    background: var(--main-color);
     color: var(--white-color);
     display: flex;
     justify-content: center;
@@ -556,7 +556,7 @@ span {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 5rem;
+    width: 100px;
     height: 5rem;
     background: var(--white-color);
     border-radius: 2rem;
@@ -781,7 +781,7 @@ img {
 
 .languages-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 10px;
     padding: 20px;
 }
@@ -920,7 +920,7 @@ img {
 @media screen and (max-width: 768px) {
 
     .languages-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         padding: 10px;
     }
