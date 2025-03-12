@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/logo.png"/>
+    <title>Joy Patel</title>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop muted autoplay>
+        <source src="Music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- box icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div id="preloader">
+    <div class="preloader-content">
+        <!-- Animated logo/brand -->
+        <div class="brand-animation">
+            <svg class="circular-text" viewBox="0 0 100 100">
+                <path id="curve" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                <text>
+                    <textPath href="#curve">
+                       --- WELCOME TO MY PORTFOLIO ---
+                    </textPath>
+                </text>
+            </svg>
+            <div class="center-logo">
+                <img src="img/logo.png" alt="My Logo" style="width: 50px; height: 50px;">
+            </div>
+        </div>
+        
+        <!-- Modern loading animation -->
+        <div class="loading-animation">
+            <div class="dot-elastic"></div>
+        </div>
+        
+        <!-- Loading progress -->
+        <div class="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">0%</div>
+        </div>
+    </div>
+</div>
+
+<style>
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.preloader-content {
+    text-align: center;
+}
+
+.brand-animation {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.circular-text {
+    width: 100%;
+    height: 100%;
+    animation: rotate 10s linear infinite;
+}
+
+.circular-text path {
+    fill: none;
+}
+
+.circular-text text {
+    fill: #3498db;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.dot-elastic {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #3498db;
+    animation: dot-elastic 1s infinite linear;
+    margin: 20px auto;
+}
+
+.dot-elastic::before,
+.dot-elastic::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #3498db;
+}
+
+.dot-elastic::before {
+    left: -15px;
+    animation: dot-elastic-before 1s infinite linear;
+}
+
+.dot-elastic::after {
+    left: 15px;
+    animation: dot-elastic-after 1s infinite linear;
+}
+
+.loading-progress {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    color: #3498db;
+    font-size: 14px;
+}
+
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes dot-elastic {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+@keyframes dot-elastic-before {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+@keyframes dot-elastic-after {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+</style>
+
+<script>
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const progressFill = document.querySelector('.progress-fill');
+        const progressText = document.querySelector('.progress-text');
+        const music = document.getElementById('bgMusic');
+        let progress = 0;
+        
+        // Start playing music immediately
+        music.play().catch(function(error) {
+            console.log("Audio autoplay failed:", error);
+        });
+        
+        const interval = setInterval(() => {
+            progress += 1;
+            progressFill.style.width = `${progress}%`;
+            progressText.textContent = `${progress}%`;
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    preloader.style.opacity = '0';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                        document.getElementById('home').classList.add('visible');
+                    }, 500);
+                }, 500);
+            }
+        }, 30);
+    });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('bgMusic');
+            music.muted = false; // Unmute after page loads
+            
+            // Try to play on any user interaction
+            function playAudio() {
+                music.play()
+                    .then(() => {
+                        // Successfully playing
+                        document.removeEventListener('touchstart', playAudio);
+                        document.removeEventListener('click', playAudio);
+                    })
+                    .catch(error => {
+                        console.log("Playback failed:", error);
+                    });
+            }
+        
+            // Listen for both touch and click events
+            document.addEventListener('touchstart', playAudio);
+            document.addEventListener('click', playAudio);
+        });
+        </script>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- header design -->
+    <header class="header">
+        <img src="img/logo.png" class="logo light-mode" id="logo" width="40" height="40">
+        
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#languages">Tools & Tech.</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="bx bx-moon" id="darkMode-icon"></div>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+        <div class="animated-background"></div>
+        <div class="home-content">
+            <div class="text-zone">
+                <h3 class="glitch-text">👋 Hi there! I'm</h3>
+                <h1 class="gradient-text">Joy Patel</h1>
+                <p class="typing-text">
+                    <span class="greeting-text">
+                        🚀 Greetings! I'm a passionate Web Designer and Digital Craftsman who thrives on turning creative visions into digital reality. Armed with cutting-edge skills in front-end development and an eye for pixel-perfect design, I specialize in building immersive digital experiences that not only look stunning but also deliver exceptional user engagement. From concept to code, I transform complex challenges into elegant, user-centric solutions that make a lasting impact. Let's create something extraordinary together! ✨
+                    </span>
+                </p>
+
+                <div class="social-media">
+                    <a href="https://www.facebook.com/Joy.patel.2" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://x.com/Joy20112001" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.instagram.com/pateljoyy" aria-label="Instagram"><i class="bx bxl-instagram-alt"></i></a>
+                    <a href="https://github.com/j2445" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+                    <a href="https://www.linkedin.com/in/joypatel12" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@pateljoyy" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="cv/cv.pdf" class="btn primary-btn" download="JOY PATEL CV">Download CV</a>
+                    <a href="#contact" class="btn secondary-btn">Let's Talk</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+        <div class="floating-shapes">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- about section design -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <div class="image-frame">
+                <img src="img/about.webp" alt="" />
+                <div class="frame-corner top-left"></div>
+                <div class="frame-corner top-right"></div>
+                <div class="frame-corner bottom-left"></div>
+                <div class="frame-corner bottom-right"></div>
+            </div>
+            <div class="floating-tech-icons">
+                <i class='bx bxl-html5'></i>
+                <i class='bx bxl-css3'></i>
+                <i class='bx bxl-javascript'></i>
+                <i class='bx bxl-react'></i>
+                <i class='bx bxl-python'></i>
+            </div>
+        </div>
+    
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <div class="about-text-container">
+            <h3 style="text-align: justify;">
+                👋 Greetings! I'm Joy Patel, a passionate Full-Stack Web Developer and Digital Solutions Architect with 
+                a proven track record of creating exceptional digital experiences. As a certified web professional with 
+                expertise in modern technologies, I specialize in crafting innovative, user-centric solutions that 
+                seamlessly blend creativity with functionality.
+
+                With over 3 years of hands-on experience in front-end and back-end development, I've successfully 
+                delivered numerous projects that combine cutting-edge technology with intuitive design. My approach 
+                integrates clean code architecture, responsive design principles, and performance optimization to create 
+                websites that not only look stunning but also drive real business results.
+
+                
+            </h3>
+            <div class="experience-stats">
+                <div class="stat-item">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+            </div>
+            <div class="more-text" style="display: none;">
+                <p>
+                    I have worked on various projects that involve modern web technologies and design principles. My
+                    goal is to create user-friendly and aesthetically pleasing websites that meet client needs.<br>
+                    Email : joypatel201101@gmail.com <br>
+                    Contact : +91 7043992445 <br>
+                    Place : Gujarat, India
+                    
+                </p>
+            </div>
+            <button class="btn read-more-btn">Read More</button>
+        </div>
+    </section>
+
+    <!-- services section design -->
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class="bx bx-code-alt"></i>
+                <h3>Web Development</h3>
+                <p>
+                    I provide custom web development services, including portfolios,
+                    business sites, e-commerce, UI/UX design, SEO optimization, and
+                    responsive solutions. 🚀
+                </p>
+                <div class="more-text" style="display: none;">
+                    <p>
+                        My expertise includes HTML, CSS, JavaScript, and various frameworks to build dynamic and
+                        responsive websites.
+                    </p>
+                </div>
+                <button class="btn read-more-btn">Read More</button>
+            </div>
+
+            <div class="services-box">
+                <i class="bx bxs-paint"></i>
+                <h3>Graphic Design</h3>
+                <p>
+                    I provide custom graphic design services, including logos, branding,
+                    social media graphics, UI/UX design, posters, brochures, and
+                    marketing materials. 🎨🚀
+                </p>
+                <div class="more-text" style="display: none;">
+                    <p>
+                        I use tools like Adobe Photoshop and Illustrator to create visually appealing designs that
+                        effectively communicate your brand message.
+                    </p>
+                </div>
+                <button class="btn read-more-btn">Read More</button>
+            </div>
+
+            <div class="services-box">
+                <i class="bx bx-bar-chart-alt"></i>
+                <h3>Digital Marketing</h3>
+                <p>
+                    I provide digital marketing services, including SEO, social media
+                    marketing, content creation, PPC ads, branding, and strategy to
+                    boost online presence. 🚀📈
+                </p>
+                <div class="more-text" style="display: none;">
+                    <p>
+                        My strategies are data-driven and tailored to increase your brand's visibility and engagement
+                        across digital platforms.
+                    </p>
+                </div>
+                <button class="btn read-more-btn">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- languages known section design -->
+    <section class="languages" id="languages">
+        <h2 class="heading">Technologies & Tools <span>Known</span></h2>
+
+        <div class="languages-container">
+            <div class="language-box">
+                <img src="img/html.png" alt="HTML" width="50" height="50" />
+                <h3>HTML</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/css.png" alt="CSS" width="50" height="50" />
+                <h3>CSS</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/javascript.png" alt="JavaScript" width="50" height="50" />
+                <h3>JavaScript</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/python.png" alt="Python" width="50" height="50" />
+                <h3>Python</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/java.png" alt="Java" width="50" height="50" />
+                <h3>Java</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/react.png" alt="Java" width="50" height="50" />
+                <h3>React</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/sql.png" alt="Java" width="50" height="50" />
+                <h3>Sql</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/php.png" alt="Java" width="50" height="50" />
+                <h3>Php</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/flutter.png" alt="Java" width="50" height="50" />
+                <h3>Flutter</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/figma.png" alt="Java" width="50" height="50" />
+                <h3>Figma</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/vscode.png" alt="Java" width="50" height="50" />
+                <h3>Visual Studio</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/view.png" alt="Java" width="50" height="50" />
+                <h3>Vue</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/mongodb.png" alt="Java" width="50" height="50" />
+                <h3>Mongodb</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/power-bi.png" alt="Java" width="50" height="50" />
+                <h3>Power-bi</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/express-js.png" alt="Java" width="50" height="50" />
+                <h3>Express-js</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/mysql.png" alt="Java" width="50" height="50" />
+                <h3>MySQL</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/github.png" alt="Java" width="50" height="50" />
+                <h3>Github</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/firebase.png" alt="Java" width="50" height="50" />
+                <h3>Firebase</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/netlify.png" alt="Java" width="50" height="50" />
+                <h3>Netlify</h3>
+            </div>
+            <div class="language-box">
+                <img src="img/Tailwind_CSS.png" alt="Java" width="50" height="30" /><br>
+                <h3>Tailwind CSS</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- portfolio section design -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading"><span>Project</span> Made</h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="img/project01.png" alt="Hoverboard Project Preview" />
+                <div class="portfolio-layer">
+                    <h3>✨ Hoverboard Project</h3>
+                    <p>An interactive color-changing hoverboard experience</p>
+                    <div class="project-links">
+                        <a href="https://hoverboard-khaki.vercel.app" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/hoverboard" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project02.png" alt="Todo List Project Preview" />
+                <div class="portfolio-layer">
+                    <h3>📝 Todo List Project</h3>
+                    <p>A sleek and intuitive task management application</p>
+                    <div class="project-links">
+                        <a href="https://todo-list-sepia-one-54.vercel.app" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/todo-list" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project03.png" alt="Theme Clock Project Preview" />
+                <div class="portfolio-layer">
+                    <h3>⏰ Theme Clock Project</h3>
+                    <p>A stylish clock with customizable themes</p>
+                    <div class="project-links">
+                        <a href="https://theme-clock-nine-tau.vercel.app" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/theme-clock" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project04.png" alt="Split Landing Page Preview" />
+                <div class="portfolio-layer">
+                    <h3>🎯 Split Landing Page</h3>
+                    <p>An engaging split-screen landing page design</p>
+                    <div class="project-links">
+                        <a href="https://split-landing-page-orpin.vercel.app" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/split-landing" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project05.png" alt="Portfolio Website Preview" />
+                <div class="portfolio-layer">
+                    <h3>🌟 Portfolio Website</h3>
+                    <p>A modern and responsive personal portfolio</p>
+                    <div class="project-links">
+                        <a href="https://website-animated-phi.vercel.app" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/portfolio" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project06.png" alt="E-commerce Store Preview" />
+                <div class="portfolio-layer">
+                    <h3>🛍️ E-commerce Store</h3>
+                    <p>A full-featured online shopping platform</p>
+                    <div class="project-links">
+                        <a href="https://j2445.github.io/ecommers-store/" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/ecommers-store" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project07.png" alt="Meta Record Label Website Preview" />
+                <div class="portfolio-layer">
+                    <h3>🎵 Meta Record Label</h3>
+                    <p>A dynamic music industry website</p>
+                    <div class="project-links">
+                        <a href="https://j2445.github.io/MetaRL-Website/" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/MetaRL-Website" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project08.png" alt="Image Scrolling Gallery Preview" />
+                <div class="portfolio-layer">
+                    <h3>📸 Image Gallery</h3>
+                    <p>A smooth scrolling image gallery experience</p>
+                    <div class="project-links">
+                        <a href="https://j2445.github.io/image-scrolling/" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/image-scrolling" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/project09.png" alt="Horizontal Scrolling Project Preview" />
+                <div class="portfolio-layer">
+                    <h3>➡️ Horizontal Scroll</h3>
+                    <p>An innovative horizontal scrolling interface</p>
+                    <div class="project-links">
+                        <a href="https://j2445.github.io/Horizontal-Scrolling/" target="_blank" class="demo-btn"><i class='bx bx-play-circle'></i> Live Demo</a>
+                        <a href="https://github.com/j2445/Horizontal-Scrolling" target="_blank" class="code-btn"><i class='bx bx-code-alt'></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonial design -->
+    <div class="testimonial-container">
+        <h2 class="heading">Valuable <span>Testimonial</span></h2>
+
+        <div class="testimonial-wrapper">
+            <div class="testimonial-box mySwiper">
+                <div class="testimonial-content swiper-wrapper">
+                    <div class="testimonial-slide swiper-slide">
+                        <img src="img/1.jpeg" alt="" />
+                        <h3>Jeet Patel</h3>
+                        <p>
+                            Working with Joy was an absolute pleasure! Their expertise in
+                            web development, UI/UX design, and cybersecurity is truly
+                            impressive. They delivered a visually stunning, responsive
+                            website with seamless functionality. Their attention to detail,
+                            creativity, and problem-solving skills exceeded my expectations.
+                            Highly recommend for anyone looking for a dedicated and skilled
+                            developer!
+                        </p>
+                    </div>
+                    <div class="testimonial-slide swiper-slide">
+                        <img src="img/2.jpeg" alt="" />
+                        <h3>Harsh Patel</h3>
+                        <p>
+                            Joy is an incredible developer with a keen eye for design and
+                            flawless execution. They transformed my ideas into a stunning,
+                            high-performing website. Professional, creative, and
+                            detail-oriented—highly recommended!
+                        </p>
+                    </div>
+                    <div class="testimonial-slide swiper-slide">
+                        <img src="img/3.jpeg" alt="" />
+                        <h3>Shivam Patel</h3>
+                        <p>
+                            Joy is an exceptionally talented and creative developer! Their
+                            expertise in web development, UI/UX design, and cybersecurity is
+                            evident in every project. They transformed my vision into a
+                            stunning, responsive, and high-performing website with flawless
+                            functionality. Their attention to detail, problem-solving
+                            skills, and commitment to delivering quality work set them
+                            apart. Working with Joy was a seamless experience, and I highly
+                            recommend them for anyone looking for a professional and
+                            innovative web developer!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class='bx bx-envelope'></i>
+                    <div class="info-details">
+                        <h3>Email</h3>
+                        <p>joypatel201101@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class='bx bx-phone'></i>
+                    <div class="info-details">
+                        <h3>Phone</h3>
+                        <p>+91 7043992445</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class='bx bx-map'></i>
+                    <div class="info-details">
+                        <h3>Location</h3>
+                        <p>Gujarat, India</p>
+                    </div>
+                </div>
+            </div>
+        <form method="post"
+            action="https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec"
+            name="contact-form" onsubmit="sendToWhatsApp(event)">
+            <div class="input-box">
+                <input type="text" name="your-name" id="name" placeholder="Name" required />
+            </div>
+            <br />
+            <div class="input-box">
+                <input type="text" name="your-number" id="phone" placeholder="Contact Number" required />
+            </div>
+            <div class="input-box">
+                <input type="email" name="your-email" id="email" placeholder="Email" required />
+            </div>
+            <div class="input-box">
+                <input type="text" name="message" id="message" placeholder="Message" required><br />
+            </div>
+            <input class="btn" type="submit" value="Send Message" id="submit" />
+        </form>
+    </div>
+    </section>
+    
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text" style="text-align: center;">
+            <p class="footer-message" style="margin: 10px 0;">Thank you for exploring my portfolio. Let's create something amazing together! 🚀</p>
+            <p class="copyright" style="margin: 10px 0;">Copyright &copy; 2025 | All Rights Reserved</p>
+            <p class="credits" style="margin: 10px 0;">Designed & Developed with <i class='bx bxs-heart' style='color:#3498db'></i> by JOY PATEL</p>
+        </div>
+
+        <div class="footer-iconTop" style="text-align: center; margin-top: 15px;">
+            <a href="#home" style="display: inline-block;"><i class="bx bx-up-arrow-alt"></i></a>
+        </div>
+    </footer>
+
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- custom js -->
+    <script src="script.js"></script>
+
+
+    <div id="submitPreloader" style="display: none;">
+        <div class="preloader-content" style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        ">
+            <div class="brand-animation" style="
+                width: 100%;
+                max-width: 200px;
+                aspect-ratio: 1;
+                margin: 0 auto;
+            ">
+                <svg class="circular-text" viewBox="0 0 100 100">
+                    <path id="submitCurve" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                    <text>
+                        <textPath href="#submitCurve">
+                           --- SENDING YOUR MESSAGE ---
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="center-logo">
+                    <img src="img/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+                </div>
+            </div>
+            <div class="loading-animation">
+                <div class="dot-elastic"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
