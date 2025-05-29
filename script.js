@@ -1,11 +1,7 @@
 'use strict';
 
-
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -13,8 +9,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
 
 // custom select variables
 const select = document.querySelector("[data-select]");
@@ -66,7 +60,6 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 }
 
-
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -88,7 +81,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-
 
 
 // Contact Form
@@ -138,7 +130,6 @@ form.addEventListener("submit", (e) => {
   submitPreloader.style.zIndex = '9999';
   submitPreloader.style.opacity = '1';
   submitPreloader.style.transition = 'opacity 0.5s ease';
-
 
   // Get form data
   const formData = new FormData(form);
@@ -265,14 +256,13 @@ closeButton.onclick = () => {
           document.body.removeChild(backdrop);
         };
       }, 500);
-    }, 2000);
+    }, 1000);
   })
   .catch(error => {
     console.error("Error submitting form data!", error.message);
     submitPreloader.style.display = 'none';
   });
 });
-
 
 
 // Preloader
@@ -300,8 +290,19 @@ document.addEventListener('DOMContentLoaded', function() {
               setTimeout(() => {
                   preloader.style.display = 'none';
                   document.getElementById('home').classList.add('visible');
-              }, 500);
-          }, 500);
+              }, 50);
+          }, 50);
       }
-  }, 30);
+  }, 0);
 });
+
+
+// Add page refresh scroll to top behavior
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
+// Ensure scroll to top on page load/refresh
+window.onload = function() {
+  window.scrollTo(0, 0);
+}
