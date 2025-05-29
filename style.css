@@ -1,28 +1,4 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-/**
- *
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
-
-  /**
-     * colors
-     */
-
-  /* gradient */
-
   --bg-gradient-onyx: linear-gradient(to bottom right,
       hsl(240, 1%, 25%) 3%,
       hsl(0, 0%, 19%) 97%);
@@ -42,8 +18,6 @@
       hsl(45, 100%, 72%),
       hsl(35, 100%, 68%));
 
-  /* solid */
-
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
@@ -56,10 +30,6 @@
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
-
-  /**
-     * typography
-     */
 
   /* font-family */
   --ff-poppins: 'Poppins', sans-serif;
@@ -99,13 +69,6 @@
 
 }
 
-
-
-
-
-/*-----------------------------------*\
-    #RESET
-  \*-----------------------------------*/
 
 *,
 *::before,
@@ -164,14 +127,6 @@ html {
 body {
   background: var(--smoky-black);
 }
-
-
-
-
-
-/*-----------------------------------*\
-    #REUSED STYLE
-  \*-----------------------------------*/
 
 .sidebar,
 article {
@@ -280,9 +235,8 @@ article.active {
 
 .has-scrollbar::-webkit-scrollbar {
   width: 5px;
-  /* for vertical scrollbar */
   height: 5px;
-  /* for horizontal scrollbar */
+  
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
@@ -321,8 +275,6 @@ article.active {
 
 
 
-
-
 /*-----------------------------------*\
     #MAIN
   \*-----------------------------------*/
@@ -332,9 +284,6 @@ main {
   margin-bottom: 75px;
   min-width: 259px;
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -487,8 +436,6 @@ main {
 
 
 
-
-
 /*-----------------------------------*\
     #NAVBAR
   \*-----------------------------------*/
@@ -529,9 +476,6 @@ main {
 .navbar-link.active {
   color: var(--orange-yellow-crayola);
 }
-
-
-
 
 
 /*-----------------------------------*\
