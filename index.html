@@ -44,15 +44,12 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader" aria-busy="true" aria-live="polite" role="status">
-        <div class="loader">
-            <span class="dot dot-1"></span>
-            <span class="dot dot-2"></span>
-            <span class="dot dot-3"></span>
-        </div>
-        <div class="loader-text">Loading...</div>
+    <div class="loading-overlay" id="preloader">
+        <div class="loader"></div>
     </div>
+
     <div id="bodyTop"><img src="Assets/Images/Icons/chevron-up.svg" alt=""></div>
+    
     <div class="cursor"></div>
 
 
@@ -110,8 +107,62 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="Assets/Images/sign.gif" alt="Signature Animation" 
-                            style="width: 100%; mix-blend-mode: screen;">
+                        <div class="animated-circles">
+                            <div class="circle circle1"></div>
+                            <div class="circle circle2"></div>
+                            <div class="circle circle3"></div>
+                            <style>
+                                .animated-circles {
+                                    position: relative;
+                                    width: 100%;
+                                    height: 200px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .circle {
+                                    position: absolute;
+                                    border-radius: 50%;
+                                    border: 2px solid rgba(255, 255, 255, 0.5);
+                                    animation: pulse 2s ease-out infinite;
+                                }
+
+                                .circle1 {
+                                    width: 100px;
+                                    height: 100px;
+                                    animation-delay: 0s;
+                                }
+
+                                .circle2 {
+                                    width: 150px;
+                                    height: 150px;
+                                    animation-delay: 0.5s;
+                                }
+
+                                .circle3 {
+                                    width: 200px;
+                                    height: 200px;
+                                    animation-delay: 1s;
+                                }
+
+                                @keyframes pulse {
+                                    0% {
+                                        transform: scale(0.5);
+                                        opacity: 0;
+                                    }
+
+                                    50% {
+                                        opacity: 0.5;
+                                    }
+
+                                    100% {
+                                        transform: scale(1.2);
+                                        opacity: 0;
+                                    }
+                                }
+                            </style>
+                        </div>
                         <div class="rotating-text">
                             <h1>Web</h1>
                             <p>
@@ -122,12 +173,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img src="Assets/Images/pic.jpg" alt="Logo" 
-                            class="d-none d-lg-block" 
-                            style="width: 200px; height: 200px; margin-top: 100px; margin-left: auto; margin-right: 100px; border-radius: 50%; object-fit: cover;">
-                        <img src="Assets/Images/pic.jpg" alt="Logo"
-                            class="d-block d-lg-none" 
-                            style="width: 150px; height: 150px; margin: 80px auto; border-radius: 50%; object-fit: cover;">
+                        <img src="Assets/Images/pic.jpg" alt="Logo" class="d-none d-lg-block hero-profile-image">
+                        <img src="Assets/Images/pic.jpg" alt="Logo" class="d-block d-lg-none hero-profile-image">
                     </div>
                 </div>
                 <div class="scroll-indicator">
@@ -245,14 +292,16 @@
                 <div class="row g-5">
                     <div class="col-md-6 mb-4 mb-md-0">
                         <img src="Assets/Images/pic.jpg" alt="Profile Image" class="profile-image">
-                        <a href="Assets/Images/JOY PATEL (RESUME).pdf" class="download-resume" download="Joy_Patel_Resume">DOWNLOAD
+                        <a href="Assets/Images/JOY PATEL (RESUME).pdf" class="download-resume"
+                            download="Joy_Patel_Resume">DOWNLOAD
                             RESUME</a>
 
-                        <a href="Assets/Images/JOY PATEL (CV).pdf" class="download-resume" download="Joy_Patel_Resume">DOWNLOAD
+                        <a href="Assets/Images/JOY PATEL (CV).pdf" class="download-resume"
+                            download="Joy_Patel_Resume">DOWNLOAD
                             CV</a>
-                            
-                            <br>
-                            <br>
+
+                        <br>
+                        <br>
                         <span class="social-links">
                             <a href="https://github.com/j2445" class="social-icon" aria-label="GitHub"
                                 target="_blank"><img src="Assets/Images/Icons/github.svg" alt="GitHub"></a>
@@ -322,8 +371,8 @@
                             </div>
 
                             <div class="achievement-item">
-                                <a href="Assets\certi\16 july 2022 Initiating and Planning Projects.jpg"
-                                    target="_blank" class="text-white">Initiating and Planning Projects</a>
+                                <a href="Assets\certi\16 july 2022 Initiating and Planning Projects.jpg" target="_blank"
+                                    class="text-white">Initiating and Planning Projects</a>
                                 <span>2022</span>
                             </div>
                         </div>
@@ -421,28 +470,36 @@
                     </div>
                     <span class="section-label">2022 - present</span>
                 </div>
-<div class="experience-item">
-                        <div class="grain"></div>
+                <div class="experience-item">
+                    <div class="grain"></div>
 
-                        <div class="row mb-3">
-                            <div class="col-8 d-flex align-items-center">
-                                <img src="Assets/Images/Experience-Company-Logo/ultron.webp" alt="Google"
-                                    class="company-logo">
-                                <div>
-                                    <p class="company-name">Ultron Technologies</p>
-                                    <h3 class="position-title">PHP Developer (Intern)</h3>
-                                </div>
-                            </div>
-                            <div class="col-4 text-end">
-                                <span class="date ms-auto d-none d-md-inline">[ DEC/2023 - APRIL/2024 ]</span>
-                                <span class="small-date d-lg-none me-2">[ DEC/23 - APRIL/24 ]</span>
+                    <div class="row mb-3">
+                        <div class="col-8 d-flex align-items-center">
+                            <img src="Assets/Images/Experience-Company-Logo/ultron.webp" alt="Google"
+                                class="company-logo">
+                            <div>
+                                <p class="company-name">Ultron Technologies</p>
+                                <h3 class="position-title">PHP Developer (Intern)</h3>
                             </div>
                         </div>
-                        <p class="description">I worked as a PHP Developer Intern at Ultron Technologies, Anand, Gujarat, for six months, where I gained hands-on experience in backend development, database management, and dynamic web applications. During my internship, I developed a Travel Agency Booking System with interactive animations, enhancing user engagement and experience.
-Additionally, I successfully completed two minor projects and a major live project—Tourism Management System, where I implemented secure authentication, seamless booking functionalities, and optimized database queries to ensure efficiency and scalability. This experience strengthened my expertise in PHP, MySQL, JavaScript, and modern web development frameworks, while also improving my problem-solving abilities and understanding of real-world software deployment and client requirements.
-                        </p>
+                        <div class="col-4 text-end">
+                            <span class="date ms-auto d-none d-md-inline">[ DEC/2023 - APRIL/2024 ]</span>
+                            <span class="small-date d-lg-none me-2">[ DEC/23 - APRIL/24 ]</span>
+                        </div>
                     </div>
-                    
+                    <p class="description">I worked as a PHP Developer Intern at Ultron Technologies, Anand, Gujarat,
+                        for six months, where I gained hands-on experience in backend development, database management,
+                        and dynamic web applications. During my internship, I developed a Travel Agency Booking System
+                        with interactive animations, enhancing user engagement and experience.
+                        Additionally, I successfully completed two minor projects and a major live project—Tourism
+                        Management System, where I implemented secure authentication, seamless booking functionalities,
+                        and optimized database queries to ensure efficiency and scalability. This experience
+                        strengthened my expertise in PHP, MySQL, JavaScript, and modern web development frameworks,
+                        while also improving my problem-solving abilities and understanding of real-world software
+                        deployment and client requirements.
+                    </p>
+                </div>
+
                 <div class="experience-items">
                     <div class="blob blob1"></div>
                     <div class="blob blob2"></div>
@@ -464,10 +521,16 @@ Additionally, I successfully completed two minor projects and a major live proje
                                 <span class="small-date d-lg-none me-2">[ MAY/23 - JUNE/23 ]</span>
                             </div>
                         </div>
-                        <p class="description">I worked as a Web Developer Intern at Perfect Software, Nadiad, Gujarat, for one month, where I gained hands-on experience in web development. During my internship, I developed a Library Management System, which enhanced my skills in HTML, CSS, JavaScript, and backend integration. I also had the opportunity to learn HTML from zero to an advanced level, deepening my understanding of web technologies and best practices. This experience strengthened my problem-solving abilities and gave me real-world exposure to software development processes.</p>
+                        <p class="description">I worked as a Web Developer Intern at Perfect Software, Nadiad, Gujarat,
+                            for one month, where I gained hands-on experience in web development. During my internship,
+                            I developed a Library Management System, which enhanced my skills in HTML, CSS, JavaScript,
+                            and backend integration. I also had the opportunity to learn HTML from zero to an advanced
+                            level, deepening my understanding of web technologies and best practices. This experience
+                            strengthened my problem-solving abilities and gave me real-world exposure to software
+                            development processes.</p>
                     </div>
 
-                    
+
                 </div>
             </div>
         </section>
@@ -475,38 +538,53 @@ Additionally, I successfully completed two minor projects and a major live proje
 
 
         <!-- EDUCATION SECTION START -->
-<section id="education" class="education-section py-5">
-  <div class="container">
-    <h2 class="section-title mb-4">Education</h2>
+        <section id="education" class="education-section py-5">
+            <div class="container">
+                <h2 class="section-title mb-4">Education</h2>
 
-    <div class="row g-4">
-      <div class="col-12">
-        <div class="edu-card p-4">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h3 class="h5 mb-0">Madhuben & Bhanubhai Patel Institute of Technology (MBIT)</h3>
-            <span class="edu-period">06/2020 - 06/2024</span>
-          </div>
-          <p class="mb-0">
-            The Department of Computer Engineering at Madhuben & Bhanubhai Patel Institute of Technology (MBIT) provided me with a strong foundation in both hardware and software domains. Throughout my studies, I gained hands-on experience in programming languages such as C, C++, Python, Java, and web technologies including HTML, CSS, JavaScript, and PHP. I also worked extensively with SQL and Power BI, strengthening my data analysis and database management skills. Additionally, I explored cybersecurity principles, networking, microcontrollers, and system design, which deepened my problem-solving abilities. Through internships and projects, I developed expertise in UI/UX design, web development, and analytical skills, preparing me for a dynamic career in technology and cybersecurity.
-          </p>
-        </div>
-      </div>
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="edu-card p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h3 class="h5 mb-0">Madhuben & Bhanubhai Patel Institute of Technology (MBIT)</h3>
+                                <span class="edu-period">06/2020 - 06/2024</span>
+                            </div>
+                            <p class="mb-0">
+                                The Department of Computer Engineering at Madhuben & Bhanubhai Patel Institute of
+                                Technology (MBIT) provided me with a strong foundation in both hardware and software
+                                domains. Throughout my studies, I gained hands-on experience in programming languages
+                                such as C, C++, Python, Java, and web technologies including HTML, CSS, JavaScript, and
+                                PHP. I also worked extensively with SQL and Power BI, strengthening my data analysis and
+                                database management skills. Additionally, I explored cybersecurity principles,
+                                networking, microcontrollers, and system design, which deepened my problem-solving
+                                abilities. Through internships and projects, I developed expertise in UI/UX design, web
+                                development, and analytical skills, preparing me for a dynamic career in technology and
+                                cybersecurity.
+                            </p>
+                        </div>
+                    </div>
 
-      <div class="col-12">
-        <div class="edu-card p-4">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h3 class="h5 mb-0">P. Chandra Vidhya Vihar</h3>
-            <span class="edu-period">07/2006 - 03/2019</span>
-          </div>
-          <p class="mb-0">
-            I studied at P. Chandra Vidhya Vihar from Standard 1 to 12, where I built a strong academic foundation and developed essential skills in problem-solving, critical thinking, and teamwork. The school provided a supportive learning environment that nurtured my curiosity and encouraged me to excel in both academics and extracurricular activities. It played a crucial role in shaping my discipline, creativity, and analytical mindset, preparing me for future challenges. The experiences and knowledge I gained during my schooling have been instrumental in my educational and personal growth.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- EDUCATION SECTION END -->
+                    <div class="col-12">
+                        <div class="edu-card p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h3 class="h5 mb-0">P. Chandra Vidhya Vihar</h3>
+                                <span class="edu-period">07/2006 - 03/2019</span>
+                            </div>
+                            <p class="mb-0">
+                                I studied at P. Chandra Vidhya Vihar from Standard 1 to 12, where I built a strong
+                                academic foundation and developed essential skills in problem-solving, critical
+                                thinking, and teamwork. The school provided a supportive learning environment that
+                                nurtured my curiosity and encouraged me to excel in both academics and extracurricular
+                                activities. It played a crucial role in shaping my discipline, creativity, and
+                                analytical mindset, preparing me for future challenges. The experiences and knowledge I
+                                gained during my schooling have been instrumental in my educational and personal growth.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- EDUCATION SECTION END -->
 
         <section class="pattern">
         </section>
@@ -738,19 +816,23 @@ Additionally, I successfully completed two minor projects and a major live proje
                                 <!-- Contact section form markup -->
                                 <form id="contactForm" class="contact-form" method="POST">
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" name="your-name" placeholder="Your Name" required>
+                                        <input type="text" class="form-control" name="your-name" placeholder="Your Name"
+                                            required>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="tel" class="form-control" name="your-number" placeholder="Your Number" required>
+                                        <input type="tel" class="form-control" name="your-number"
+                                            placeholder="Your Number" required>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" name="your-email" placeholder="Your Email" required>
+                                        <input type="email" class="form-control" name="your-email"
+                                            placeholder="Your Email" required>
                                     </div>
                                     <div class="mb-3">
                                         <input type="text" class="form-control" name="subject" placeholder="Subject">
                                     </div>
                                     <div class="mb-3">
-                                        <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+                                        <textarea class="form-control" name="message" rows="5"
+                                            placeholder="Your Message" required></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">
                                         <span class="btn-text">Send Message</span>
@@ -801,133 +883,99 @@ Additionally, I successfully completed two minor projects and a major live proje
 
 
     <script>
-  // Google Apps Script Web App URL
-  const scriptURL = "https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec";
+        // Google Apps Script Web App URL
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec";
 
-  // Telegram Bot settings (note: exposed on client)
-  const telegramBotToken = "7767198078:AAFZ6LUrFyHXAcrwe1h21n5-FwXhuQpGUUg";
-  const telegramChatId = "1024398170";
+        // Telegram Bot settings (note: exposed on client)
+        const telegramBotToken = "7767198078:AAFZ6LUrFyHXAcrwe1h21n5-FwXhuQpGUUg";
+        const telegramChatId = "1024398170";
 
-  function sendTelegramMessage(message) {
-    return fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: telegramChatId, text: message })
-    })
-      .then(r => r.json())
-      .then(d => {
-        console.log("Telegram response:", d);
-        return d;
-      });
-  }
-
-  const form = document.getElementById("contactForm");
-
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const btnLabelEl = form.querySelector('.btn-text');
-      const originalLabel = btnLabelEl ? btnLabelEl.textContent : "Send Message";
-
-      try {
-        if (btnLabelEl) btnLabelEl.textContent = "Sending...";
-        if (submitBtn) submitBtn.disabled = true;
-
-        // Read values using the sheet header names
-        const name = form.elements["your-name"].value.trim();
-        const number = form.elements["your-number"].value.trim();
-        const email = form.elements["your-email"].value.trim();
-        const subject = form.elements["subject"] ? form.elements["subject"].value.trim() : "";
-        const message = form.elements["message"].value.trim();
-
-        // Submit to Google Sheets via Apps Script
-        const formData = new FormData(form); // sends your-name, your-number, your-email, message (and subject)
-        const resp = await fetch(scriptURL, { method: "POST", body: formData });
-
-        // If CORS opaque, treat as success
-        if (!resp.ok && resp.type !== "opaque") {
-          const errText = await resp.text().catch(() => "");
-          throw new Error(`Sheets submission failed: ${resp.status} ${errText}`);
+        function sendTelegramMessage(message) {
+            return fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chat_id: telegramChatId, text: message })
+            })
+                .then(r => r.json())
+                .then(d => {
+                    console.log("Telegram response:", d);
+                    return d;
+                });
         }
 
-        // Send to Telegram
-        const telegramText =
-          `New Contact Submission:\n\n` +
-          `Name: ${name}\n` +
-          `Number: ${number}\n` +
-          `Email: ${email}\n` +
-          (subject ? `Subject: ${subject}\n` : "") +
-          `Message:\n${message}`;
+        const form = document.getElementById("contactForm");
 
-        await sendTelegramMessage(telegramText);
+        if (form) {
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
 
-        form.reset();
-        if (btnLabelEl) btnLabelEl.textContent = "Sent!";
-        setTimeout(() => {
-          if (btnLabelEl) btnLabelEl.textContent = originalLabel;
-          if (submitBtn) submitBtn.disabled = false;
-        }, 1500);
-      } catch (err) {
-        console.error(err);
-        alert("Failed to submit. Please try again later.");
-        if (btnLabelEl) btnLabelEl.textContent = originalLabel;
-        if (submitBtn) submitBtn.disabled = false;
-      }
-    });
-  } else {
-    console.error("Contact form element #contactForm not found.");
-  }
-</script>
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const btnLabelEl = form.querySelector('.btn-text');
+                const originalLabel = btnLabelEl ? btnLabelEl.textContent : "Send Message";
 
+                try {
+                    if (btnLabelEl) btnLabelEl.textContent = "Sending...";
+                    if (submitBtn) submitBtn.disabled = true;
 
+                    // Read values using the sheet header names
+                    const name = form.elements["your-name"].value.trim();
+                    const number = form.elements["your-number"].value.trim();
+                    const email = form.elements["your-email"].value.trim();
+                    const subject = form.elements["subject"] ? form.elements["subject"].value.trim() : "";
+                    const message = form.elements["message"].value.trim();
 
-<script>
-// Hide preloader when all assets are loaded
-window.addEventListener('load', function () {
-  const preloader = document.getElementById('preloader');
-  if (!preloader) return;
+                    // Submit to Google Sheets via Apps Script
+                    const formData = new FormData(form); // sends your-name, your-number, your-email, message (and subject)
+                    const resp = await fetch(scriptURL, { method: "POST", body: formData });
 
-  // fade out
-  preloader.classList.add('hidden');
+                    // If CORS opaque, treat as success
+                    if (!resp.ok && resp.type !== "opaque") {
+                        const errText = await resp.text().catch(() => "");
+                        throw new Error(`Sheets submission failed: ${resp.status} ${errText}`);
+                    }
 
-  // remove from DOM after transition to avoid blocking clicks/scroll
-  setTimeout(() => {
-    if (preloader && preloader.parentNode) {
-      preloader.parentNode.removeChild(preloader);
-    }
-  }, 450);
-});
-</script>
+                    // Send to Telegram
+                    const telegramText =
+                        `New Contact Submission:\n\n` +
+                        `Name: ${name}\n` +
+                        `Number: ${number}\n` +
+                        `Email: ${email}\n` +
+                        (subject ? `Subject: ${subject}\n` : "") +
+                        `Message:\n${message}`;
 
+                    await sendTelegramMessage(telegramText);
 
-<script>
-  (function () {
-    // Disable browser’s automatic scroll restoration
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
+                    form.reset();
+                    if (btnLabelEl) btnLabelEl.textContent = "Sent!";
+                    setTimeout(() => {
+                        if (btnLabelEl) btnLabelEl.textContent = originalLabel;
+                        if (submitBtn) submitBtn.disabled = false;
+                    }, 1500);
+                } catch (err) {
+                    console.error(err);
+                    alert("Failed to submit. Please try again later.");
+                    if (btnLabelEl) btnLabelEl.textContent = originalLabel;
+                    if (submitBtn) submitBtn.disabled = false;
+                }
+            });
+        } else {
+            console.error("Contact form element #contactForm not found.");
+        }
 
-    const scrollTop = () => {
-      // Attempt all methods to ensure top in different browsers
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-      window.scrollTo(0, 0);
-    };
+        // Preloader script
+        window.addEventListener('load', function () {
+            document.body.style.overflow = 'hidden'; // Disable scrolling
+            setTimeout(function () {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                    preloader.style.display = 'none';
+                }
+                document.body.style.overflow = ''; // Re-enable scrolling
+                window.scrollTo(0, 0); // Scroll to the top of the page
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
 
-    // On normal load
-    window.addEventListener('load', scrollTop);
-
-    // When page is shown from the bfcache (back-forward cache)
-    window.addEventListener('pageshow', function (e) {
-      if (e.persisted) scrollTop();
-    });
-
-    // Ensure top on unload (some browsers respect this)
-    window.addEventListener('beforeunload', scrollTop);
-  })();
-</script>
 </body>
 
 </html>
