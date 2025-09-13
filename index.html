@@ -828,9 +828,6 @@
                                             placeholder="Your Email" required>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" name="subject" placeholder="Subject">
-                                    </div>
-                                    <div class="mb-3">
                                         <textarea class="form-control" name="message" rows="5"
                                             placeholder="Your Message" required></textarea>
                                     </div>
@@ -880,29 +877,9 @@
 
 
 
-
-
-    <script>
+<script>
         // Google Apps Script Web App URL
         const scriptURL = "https://script.google.com/macros/s/AKfycbyY3ADxOPDkuewyTiAnyUL-wIY6Heauht20xkmdSFAMxT_lT-KdlDocV7xlDnRT0AZo/exec";
-
-        // Telegram Bot settings (note: exposed on client)
-        const telegramBotToken = "7767198078:AAFZ6LUrFyHXAcrwe1h21n5-FwXhuQpGUUg";
-        const telegramChatId = "1024398170";
-
-        function sendTelegramMessage(message) {
-            return fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ chat_id: telegramChatId, text: message })
-            })
-                .then(r => r.json())
-                .then(d => {
-                    console.log("Telegram response:", d);
-                    return d;
-                });
-        }
-
         const form = document.getElementById("contactForm");
 
         if (form) {
@@ -921,12 +898,17 @@
                     const name = form.elements["your-name"].value.trim();
                     const number = form.elements["your-number"].value.trim();
                     const email = form.elements["your-email"].value.trim();
-                    const subject = form.elements["subject"] ? form.elements["subject"].value.trim() : "";
                     const message = form.elements["message"].value.trim();
 
                     // Submit to Google Sheets via Apps Script
-                    const formData = new FormData(form); // sends your-name, your-number, your-email, message (and subject)
+                    const formData = new FormData();
+                    formData.append("your-name", name);
+                    formData.append("your-number", number);
+                    formData.append("your-email", email);
+                    formData.append("message", message);
+
                     const resp = await fetch(scriptURL, { method: "POST", body: formData });
+                    console.log("Google Sheets API response:", resp);
 
                     // If CORS opaque, treat as success
                     if (!resp.ok && resp.type !== "opaque") {
@@ -934,27 +916,15 @@
                         throw new Error(`Sheets submission failed: ${resp.status} ${errText}`);
                     }
 
-                    // Send to Telegram
-                    const telegramText =
-                        `New Contact Submission:\n\n` +
-                        `Name: ${name}\n` +
-                        `Number: ${number}\n` +
-                        `Email: ${email}\n` +
-                        (subject ? `Subject: ${subject}\n` : "") +
-                        `Message:\n${message}`;
-
-                    await sendTelegramMessage(telegramText);
-
                     form.reset();
                     if (btnLabelEl) btnLabelEl.textContent = "Sent!";
                     setTimeout(() => {
                         if (btnLabelEl) btnLabelEl.textContent = originalLabel;
-                        if (submitBtn) submitBtn.disabled = false;
                     }, 1500);
                 } catch (err) {
                     console.error(err);
-                    alert("Failed to submit. Please try again later.");
-                    if (btnLabelEl) btnLabelEl.textContent = originalLabel;
+                    alert(`Failed to submit: ${err.message}. Please try again later.`);
+                } finally {
                     if (submitBtn) submitBtn.disabled = false;
                 }
             });
@@ -964,18 +934,16 @@
 
         // Preloader script
         window.addEventListener('load', function () {
-            document.body.style.overflow = 'hidden'; // Disable scrolling
+            document.body.style.overflow = 'hidden'; 
             setTimeout(function () {
                 const preloader = document.getElementById('preloader');
                 if (preloader) {
                     preloader.style.display = 'none';
                 }
-                document.body.style.overflow = ''; // Re-enable scrolling
-                window.scrollTo(0, 0); // Scroll to the top of the page
-            }, 3000); // 3000 milliseconds = 3 seconds
+                document.body.style.overflow = ''; 
+                window.scrollTo(0, 0);
+            }, 3000);
         });
     </script>
-
 </body>
-
 </html>
