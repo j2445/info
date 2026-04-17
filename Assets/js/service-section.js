@@ -3,7 +3,7 @@ const services = [
         id: 'web-development',
         title: 'Web Development',
         description: 'Crafting Dynamic, Scalable, and Future-Ready Websites That Stand Out.',
-        startingCost: 200,
+        startingCost: 150,
         features: [
             'Custom Web Design',
             'Responsive Design',
@@ -18,7 +18,7 @@ const services = [
         id: 'web-design',
         title: 'Web Design',
         description: 'Where Creativity Meets Functionality to Craft Visually Stunning Websites.',
-        startingCost: 150,
+        startingCost: 100,
         features: [
             'Bespoke Visual Design',
             'User-Centered Design',
@@ -34,7 +34,7 @@ const services = [
         id: 'graphics-design',
         title: 'Graphics Design',
         description: 'Transforming Ideas into Visual Masterpieces That Speak to Your Audience.',
-        startingCost: 100,
+        startingCost: 50,
         features: [
             'Custom Logos & Branding',
             'Marketing Materials',
@@ -60,7 +60,7 @@ function createAccordionItem(service, index) {
                     <div class="row">
                         <div class="col-md-6">
                             <p>${service.description}</p>
-                            <p>Starts At <u>Cost® — $${service.startingCost}</u></p>
+                            <p>Starts At Cost® — £${service.startingCost}</p>
                             <p class="fw-bold">[ KEY FEATURES ]</p>
                             <ul class="list-unstyled">
                                 ${service.features.map(feature => `<li><i class="fas fa-check me-2"></i>${feature}</li>`).join('')}
