@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="#27101C"/><rect x="1.5" y="1.5" width="61" height="61" rx="16.5" fill="none" stroke="#D88CA8" stroke-opacity=".45" stroke-width="1.5"/><text x="32" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="28" fill="#F6EDF0">SD</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <!-- Background shape with rounded corners -->
+  <rect x="2" y="2" width="96" height="96" rx="22" ry="22" fill="#2b1d27" stroke="#5b3e51" stroke-width="2.5" />
+  
+  <!-- Text element -->
+  <text x="50" y="54" 
+        font-family="Georgia, 'Times New Roman', serif" 
+        font-style="italic" 
+        font-size="46" 
+        fill="#f0eaee" 
+        text-anchor="middle" 
+        dominant-baseline="middle"
+        letter-spacing="-2">JP</text>
+</svg>
