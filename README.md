@@ -1,5 +1,5 @@
 <a href="https://joy-1.vercel.app/">
-  <img src="assets/joy-hero-portrait.svg" width="100%" alt="Joy Patel — Web Developer and Full-Stack Developer. Building fast, friendly experiences for the web.">
+  <img src="assets/joy-portrait.jpg" width="100%" alt="Joy Patel — Web Developer and Full-Stack Developer. Building fast, friendly experiences for the web.">
 </a>
 
 <p align="center">
