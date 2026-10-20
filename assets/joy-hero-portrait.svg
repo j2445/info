@@ -162,7 +162,7 @@
       </path>
       <g clip-path="url(#hero-arch)">
         <rect x="847" y="84" width="236" height="296" fill="url(#hero-photo-wash)"/>
-        <image  href="site/assets/img/joy-portrait.JPG" xlink:href="site/assets/img/joy-portrait.JPG" x="847" y="84" width="236" height="296" preserveAspectRatio="xMidYMin slice" style="mix-blend-mode:multiply"/>
+        <image  href="https://plain-weur-prod-public.komododecks.com/202610/20/f5m5YWopyFWM1pB7dSnY/image.jpg" xlink:href="https://plain-weur-prod-public.komododecks.com/202610/20/f5m5YWopyFWM1pB7dSnY/image.jpg" x="847" y="84" width="236" height="296" preserveAspectRatio="xMidYMin slice" style="mix-blend-mode:multiply"/>
         <rect x="847" y="84" width="236" height="296" fill="url(#hero-photo-grade)"/>
         <rect x="700" y="84" width="90" height="296" fill="url(#hero-photo-sheen)" transform="skewX(-14)">
           <animate attributeName="x" values="700;1260;1260" keyTimes="0;.3;1" dur="9s" begin="3.5s" repeatCount="indefinite"/>
