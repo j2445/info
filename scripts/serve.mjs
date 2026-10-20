@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-// Minimal static server for previewing site/ locally: node scripts/serve.mjs [port]
+// Minimal static server for previewing the portfolio locally: node scripts/serve.mjs [port]
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../site");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const port = Number(process.env.PORT || process.argv[2] || 4173);
 const types = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
@@ -21,4 +21,4 @@ http.createServer((req, res) => {
     if (err) return res.writeHead(404, { "Content-Type": "text/plain" }).end("Not found");
     res.writeHead(200, { "Content-Type": types[path.extname(file)] || "application/octet-stream" }).end(buf);
   });
-}).listen(port, () => console.log(`Serving site/ at http://localhost:${port}`));
+}).listen(port, () => console.log(`Serving portfolio at http://localhost:${port}`));

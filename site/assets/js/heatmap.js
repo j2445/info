@@ -31,7 +31,7 @@ function demoData() {
 
 async function loadData() {
   try {
-    const res = await fetch("data/contributions.json", { cache: "no-cache" });
+    const res = await fetch(new URL("../../data/contributions.json", import.meta.url), { cache: "no-cache" });
     if (!res.ok) throw new Error(res.status);
     const json = await res.json();
     if (!Array.isArray(json.days) || json.days.length === 0) throw new Error("empty");

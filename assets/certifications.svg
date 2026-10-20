@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="ce-t ce-d">
+  <title id="ce-t">Certifications</title>
+  <desc id="ce-d">Smart Cities; Introduction to Web Development; Machine Learning with Python; Introduction to DevOps; Programming for Everybody (Getting Started with Python); Initiating and Planning Projects. Plus MSc Computing (University of Huddersfield) and B.E. Computer Engineering (MBIT).</desc>
+  <defs>
+    <linearGradient id="ce-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient>
+    <radialGradient id="ce-glow" cx="15%" cy="100%" r="70%"><stop offset="0" stop-color="#701A3D" stop-opacity=".5"/><stop offset="1" stop-color="#451126" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ce-edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8F0F3"/><stop offset=".5" stop-color="#E5B5C7"/><stop offset="1" stop-color="#C77B9B" stop-opacity="0"/></linearGradient>
+  </defs>
+  <style>
+    .ce-serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
+    .ce-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .ce-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .ce-tile { animation: ce-in 1s cubic-bezier(.34,1.3,.64,1) both; }
+    .ce-edge { stroke-dasharray: 870; stroke-dashoffset: 870; animation: ce-edge 6s cubic-bezier(.65,0,.35,1) infinite; }
+    @keyframes ce-in { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
+    @keyframes ce-edge { 0% { stroke-dashoffset: 870; opacity: 1; } 40% { stroke-dashoffset: 0; opacity: 1; } 60%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .ce-tile { animation: none; } .ce-edge { display: none; } }
+  </style>
+  <rect width="1200" height="420" rx="20" fill="url(#ce-bg)"/>
+  <rect width="1200" height="420" rx="20" fill="url(#ce-glow)"/>
+  <rect x=".5" y=".5" width="1199" height="419" rx="19.5" fill="none" stroke="#C77B9B" stroke-opacity=".16"/>
+  <g class="ce-tile" style="animation-delay:0.20s"><g transform="translate(40 40)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:2.00s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">COURSERA</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Smart Cities</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">The Hong Kong Univ.</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#E5B5C7">Mar 2023</text>
+  </g></g>
+  <g class="ce-tile" style="animation-delay:0.32s"><g transform="translate(325 40)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:2.35s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">COURSERA</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/><circle cx="216" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Introduction to Web</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Development</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#B6A3AC">Feb 2023</text>
+  </g></g>
+  <g class="ce-tile" style="animation-delay:0.44s"><g transform="translate(610 40)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:2.70s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">COURSERA</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Machine Learning</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">with Python · Mar 2023</text>
+  </g></g>
+  <g class="ce-tile" style="animation-delay:0.56s"><g transform="translate(895 40)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:3.05s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">COURSERA</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Introduction to DevOps</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Coursera</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#E5B5C7">Mar 2023</text>
+  </g></g>
+  <g class="ce-tile" style="animation-delay:0.68s"><g transform="translate(40 230)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:3.40s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">COURSERA</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/><circle cx="216" cy="31" r="3.5" fill="#C77B9B"/><circle cx="205" cy="31" r="3.5" fill="#C77B9B"/><circle cx="194" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Programming for Everybody</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Getting Started with Python</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#B6A3AC">Jul 2022</text>
+  </g></g>
+  <g class="ce-tile" style="animation-delay:0.80s"><g transform="translate(325 230)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:3.75s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">COURSERA</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Initiating &amp; Planning</text>
+  </g></g>
+  <g class="ce-tile" style="animation-delay:0.92s"><g transform="translate(610 230)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:4.10s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">EDUCATION</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">MSc Computing</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#E5B5C7">University of Huddersfield</text>
+  </g></g>
+  <g class="ce-tile" style="animation-delay:1.04s"><g transform="translate(895 230)">
+    <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
+    <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:4.45s"/>
+    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">EDUCATION</text>
+    <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
+    <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
+    <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">B.E. Computer Engineering</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">MBIT · 2020 – 2024</text>
+  </g></g>
+</svg>
