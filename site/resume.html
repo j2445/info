@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Joy Patel</title>
+  <meta name="description" content="Resume of Joy Patel — web developer building responsive websites and full-stack web applications with HTML, CSS, JavaScript, Python and Django.">
+  <meta name="theme-color" content="#10070C">
+  <link rel="canonical" href="https://joy-1.vercel.app/resume.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <style>
+    @layer sections {
+      body { padding-block: var(--space-xl) var(--space-3xl); }
+      body::after { display: none; }
+      .bar {
+        display: flex; flex-wrap: wrap; gap: var(--space-s); justify-content: space-between; align-items: center;
+        margin-bottom: var(--space-xl);
+      }
+      .bar__actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+      .sheet {
+        padding: clamp(1.25rem, 4vw, 3.5rem);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-l);
+        background: linear-gradient(180deg, var(--ink-900), var(--ink-950));
+        box-shadow: var(--shadow-2);
+      }
+      .r-head { display: grid; gap: 0.6rem; padding-bottom: var(--space-l); border-bottom: 1px solid var(--line-strong); }
+      .r-head h1 { font-family: var(--font-display); font-size: var(--step-4); font-weight: 300; letter-spacing: -0.035em; }
+      .r-head h1 em { color: var(--rose-300); }
+      .r-head .role { color: var(--text-muted); }
+      .r-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; list-style: none; padding: 0; font-size: var(--step--1); }
+      .r-links a { color: var(--rose-200); }
+      .r-sec { display: grid; grid-template-columns: 11rem 1fr; gap: var(--space-l); padding-block: var(--space-l); border-bottom: 1px solid var(--line); }
+      .r-sec:last-child { border-bottom: 0; }
+      .r-sec > h2 { font-family: var(--font-mono); font-size: var(--step--2); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); padding-top: 0.3rem; }
+      .r-item + .r-item { margin-top: var(--space-m); }
+      .r-item__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.2rem 1rem; }
+      .r-item h3 { font-size: var(--step-0); font-weight: 600; line-height: 1.4; }
+      .r-item .meta { font-family: var(--font-mono); font-size: var(--step--2); color: var(--text-muted); white-space: nowrap; }
+      .r-item .sub { color: var(--rose-200); font-size: var(--step--1); }
+      .r-item ul, .r-list { padding-left: 1.1rem; margin-top: 0.4rem; display: grid; gap: 0.3rem; color: var(--text-muted); font-size: var(--step--1); }
+      .r-item li::marker, .r-list li::marker { color: var(--wine-600); }
+      .r-skills { display: grid; gap: 0.35rem; font-size: var(--step--1); color: var(--text-muted); }
+      .r-skills b { color: var(--ivory); font-weight: 500; }
+      .r-note { margin-top: var(--space-l); font-size: var(--step--2); color: var(--faint); font-family: var(--font-mono); }
+      @media (max-width: 680px) { .r-sec { grid-template-columns: 1fr; gap: 0.6rem; } }
+
+      @media print {
+        @page { margin: 14mm 14mm; }
+        :root { --text-muted: #333; --rose-200: #6E1738; --accent: #6E1738; --ivory: #111; --line: #ddd; --line-strong: #bbb; --faint: #666; }
+        body { background: #fff; color: #111; padding: 0; font-size: 10.5pt; }
+        .bar, .r-note { display: none; }
+        .sheet { border: 0; padding: 0; box-shadow: none; background: none; }
+        .r-sec { break-inside: avoid; padding-block: 0.6rem; }
+        .r-head h1 { font-size: 24pt; }
+        a { color: inherit !important; }
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" style="max-width: 920px">
+    <div class="bar">
+      <a class="btn btn--ghost btn--small" href="./">← Back to portfolio</a>
+      <div class="bar__actions">
+        <button class="btn btn--primary btn--small" type="button" onclick="window.print()">Save as PDF / Print</button>
+      </div>
+    </div>
+
+    <article class="sheet">
+      <header class="r-head">
+        <h1>Joy <em>Patel</em></h1>
+        <p class="role">Web Developer · Full-Stack Developer — MSc Computing, University of Huddersfield</p>
+        <ul class="r-links">
+          <li><a class="link-u" href="mailto:joypatel201101@gmail.com">joypatel201101@gmail.com</a></li>
+          <li><a class="link-u" href="https://github.com/j2445">github.com/j2445</a></li>
+          <li><a class="link-u" href="https://www.linkedin.com/in/joypatel12">linkedin.com/in/joypatel12</a></li>
+          <li><a class="link-u" href="https://joy-1.vercel.app/">Portfolio</a></li>
+        </ul>
+      </header>
+
+      <section class="r-sec">
+        <h2>Education</h2>
+        <div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>University of Huddersfield — London Campus</h3><span class="meta">Sep 2025 – Sep 2026</span></div>
+            <p class="sub">MSc Computing</p>
+          </div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>Madhuben &amp; Bhanubhai Patel Institute of Technology (MBIT)</h3><span class="meta">Jun 2020 – Jun 2024</span></div>
+            <p class="sub">B.E., Computer Engineering</p>
+          </div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>P. Chandra Vidhya Vihar</h3><span class="meta">Jul 2006 – Mar 2019</span></div>
+            <p class="sub">Schooling — Standards 1 to 12</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="r-sec">
+        <h2>Skills</h2>
+        <div class="r-skills">
+          <p><b>Languages:</b> JavaScript, Python, PHP, SQL</p>
+          <p><b>Frontend:</b> HTML, CSS, Bootstrap, JavaScript, jQuery — responsive design</p>
+          <p><b>Backend &amp; Frameworks:</b> PHP, Django, Laravel, REST APIs, authentication</p>
+          <p><b>Databases:</b> PostgreSQL, MySQL — database design and queries</p>
+          <p><b>Tools:</b> Docker, Git / GitHub, Postman, Arduino</p>
+          <p><b>CS Fundamentals:</b> DSA, OOP, DBMS, Web Security, Debugging, Version Control</p>
+        </div>
+      </section>
+
+      <section class="r-sec">
+        <h2>Experience</h2>
+        <div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>Inspiration Healthcare Group — Production Assembler</h3><span class="meta">Sep 2025 – Present</span></div>
+            <p class="sub">London, UK</p>
+            <ul>
+              <li>Assembling and calibrating sensors for ventilators used in hospitals.</li>
+              <li>Working to strict quality and precision standards in a medical-device environment.</li>
+            </ul>
+          </div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>Ultron Technologies — PHP Developer (Intern)</h3><span class="meta">Dec 2023 – Apr 2024</span></div>
+            <p class="sub">Anand, Gujarat</p>
+            <ul>
+              <li>Gained hands-on experience in backend development, database management and dynamic web applications.</li>
+              <li>Developed a Travel Agency Booking System with interactive animations to improve user engagement.</li>
+              <li>Completed two minor projects and a major live project — a Tourism Management System — with secure authentication, seamless booking and optimised database queries.</li>
+            </ul>
+          </div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>Perfect Software — Web Developer (Intern)</h3><span class="meta">May 2023 – Jun 2023</span></div>
+            <p class="sub">Nadiad, Gujarat</p>
+            <ul>
+              <li>Built a Library Management System, strengthening skills in HTML, CSS, JavaScript and backend integration.</li>
+              <li>Learned HTML from the ground up to an advanced level, deepening my understanding of web technologies and best practices.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="r-sec">
+        <h2>Projects</h2>
+        <div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>DevPulse</h3><span class="meta">2024</span></div>
+            <p class="sub">HTML, CSS, JavaScript, PHP, MySQL</p>
+            <ul>
+              <li>A full-stack tech news and tutorials blog with a responsive reading experience and an admin-managed content pipeline.</li>
+            </ul>
+          </div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>EDISON</h3><span class="meta">2024</span></div>
+            <p class="sub">HTML, CSS, Bootstrap, JavaScript</p>
+            <ul>
+              <li>A brand identity and responsive marketing website for an online education platform, guiding visitors toward enrolling.</li>
+            </ul>
+          </div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>Linkin Park — Tribute Site</h3><span class="meta">2024</span></div>
+            <p class="sub">HTML, CSS, JavaScript</p>
+            <ul>
+              <li>A bold, interactive website for a music band, with strong visuals and smooth scroll and hover interactions.</li>
+            </ul>
+          </div>
+          <div class="r-item">
+            <div class="r-item__top"><h3>Alanzo</h3><span class="meta">2024</span></div>
+            <p class="sub">HTML, CSS, Bootstrap, JavaScript</p>
+            <ul>
+              <li>A responsive catering website presenting menus, services and a gallery with clear enquiry calls to action.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="r-sec">
+        <h2>Certifications</h2>
+        <ul class="r-list">
+          <li>Smart Cities — Management of Smart Urban Infrastructures (2023)</li>
+          <li>Introduction to Web Development (2023)</li>
+          <li>Machine Learning with Python (2023)</li>
+          <li>Introduction to DevOps (2023)</li>
+          <li>Programming for Everybody (Getting Started with Python) (2022)</li>
+          <li>Initiating and Planning Projects (2022)</li>
+        </ul>
+      </section>
+    </article>
+    <p class="r-note">Contact details limited to email for privacy. Use “Save as PDF” to download a copy.</p>
+  </main>
+</body>
+</html>

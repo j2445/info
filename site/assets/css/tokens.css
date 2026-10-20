@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Design tokens — "Burgundy After Dark"
+   ========================================================================== */
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Palette */
+  --ink-950: #10070c;
+  --ink-900: #190b12;
+  --ink-850: #1f0d17;
+  --ink-800: #27101c;
+  --wine-700: #6e1738;
+  --wine-600: #941f4d;
+  --rose-300: #d88ca8;
+  --rose-200: #e9b9ca;
+  --ivory: #f6edf0;
+  --muted: #b7a5ae;
+  --faint: #8a7480;
+  --line: rgba(216, 140, 168, 0.16);
+  --line-strong: rgba(216, 140, 168, 0.32);
+  --brass: #c9a27a;
+
+  /* Semantic */
+  --bg: var(--ink-950);
+  --bg-2: var(--ink-900);
+  --surface: var(--ink-800);
+  --text: var(--ivory);
+  --text-muted: var(--muted);
+  --accent: var(--rose-300);
+  --accent-strong: var(--wine-600);
+  --focus: var(--rose-200);
+
+  /* Heatmap scale (near-black → wine → rose) */
+  --heat-0: #1c0c15;
+  --heat-1: #45122a;
+  --heat-2: #6e1738;
+  --heat-3: #a12556;
+  --heat-4: #e09ab4;
+
+  /* Typography */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Geist", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --step--2: clamp(0.69rem, 0.66rem + 0.12vw, 0.76rem);
+  --step--1: clamp(0.8rem, 0.77rem + 0.16vw, 0.89rem);
+  --step-0: clamp(0.97rem, 0.93rem + 0.2vw, 1.08rem);
+  --step-1: clamp(1.15rem, 1.08rem + 0.36vw, 1.38rem);
+  --step-2: clamp(1.4rem, 1.26rem + 0.7vw, 1.85rem);
+  --step-3: clamp(1.8rem, 1.5rem + 1.5vw, 2.8rem);
+  --step-4: clamp(2.3rem, 1.75rem + 2.75vw, 4.2rem);
+  --step-5: clamp(3rem, 1.9rem + 5.4vw, 7.4rem);
+
+  /* Spacing */
+  --space-2xs: clamp(0.25rem, 0.23rem + 0.1vw, 0.31rem);
+  --space-xs: clamp(0.5rem, 0.46rem + 0.2vw, 0.63rem);
+  --space-s: clamp(0.75rem, 0.7rem + 0.3vw, 0.94rem);
+  --space-m: clamp(1rem, 0.92rem + 0.4vw, 1.25rem);
+  --space-l: clamp(1.5rem, 1.38rem + 0.6vw, 1.88rem);
+  --space-xl: clamp(2rem, 1.8rem + 1vw, 2.75rem);
+  --space-2xl: clamp(3rem, 2.6rem + 2vw, 4.5rem);
+  --space-3xl: clamp(4.5rem, 3.6rem + 4.5vw, 8rem);
+
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --max: 1240px;
+  --measure: 62ch;
+
+  /* Shape & depth */
+  --radius-s: 6px;
+  --radius-m: 14px;
+  --radius-l: 24px;
+  --shadow-1: 0 1px 0 rgba(246, 237, 240, 0.04) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.8);
+  --shadow-2: 0 1px 0 rgba(246, 237, 240, 0.06) inset, 0 40px 80px -40px rgba(110, 23, 56, 0.55);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-1: 160ms;
+  --dur-2: 320ms;
+  --dur-3: 700ms;
+  --dur-4: 1100ms;
+
+  --nav-h: 68px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0ms;
+    --dur-2: 0ms;
+    --dur-3: 0ms;
+    --dur-4: 0ms;
+  }
+}
