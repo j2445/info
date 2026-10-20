@@ -5,7 +5,8 @@ import re
 
 root = Path(__file__).resolve().parents[1]
 svg_path = root / "assets" / "joy-hero-portrait.svg"
-out_dir = root / "site" / "assets" / "img"
+site_img = root / "site" / "assets" / "img"
+readme_img = root / "assets" / "joy-portrait.jpg"
 
 svg = svg_path.read_text(encoding="utf-8")
 m = re.search(r'href="data:image/jpeg;base64,([^"]+)"', svg)
@@ -14,8 +15,7 @@ if not m:
 
 b64 = m.group(1).lstrip("\ufeff")
 data = base64.b64decode(b64)
-out_dir.mkdir(parents=True, exist_ok=True)
-full = out_dir / "joy-portrait.jpg"
-full.write_bytes(data)
-(out_dir / "joy-portrait-640.jpg").write_bytes(data)
-print(f"Wrote {full} ({len(data)} bytes)")
+site_img.mkdir(parents=True, exist_ok=True)
+for path in (site_img / "joy-portrait.jpg", site_img / "joy-portrait-640.jpg", readme_img):
+    path.write_bytes(data)
+    print(f"Wrote {path} ({len(data)} bytes)")
