@@ -41,15 +41,14 @@
     <!-- Fallback Gradient (Visible if image fails to load) -->
     <path d="M 850 390 L 850 230 Q 850 130 940 130 Q 1030 130 1030 230 L 1030 390 Z" fill="url(#portrait-grad)"/>
     
-    <!-- 👇 CHANGE YOUR PICTURE HERE 👇 -->
-    <!-- Use xlink:href for older browser support, href for modern browsers -->
+    <!-- 👇 YOUR NEW IMAGE LINK IS HERE 👇 -->
     <image 
-      xlink:href="site/assets/img/joy-portrait.JPG" 
-      href="site/assets/img/joy-portrait.JPG" 
+      xlink:href="https://plain-weur-prod-public.komododecks.com/202610/20/f5m5YWopyFWM1pB7dSnY/image.jpg" 
+      href="https://plain-weur-prod-public.komododecks.com/202610/20/f5m5YWopyFWM1pB7dSnY/image.jpg" 
       x="850" y="130" width="180" height="260" 
       clip-path="url(#arch-clip)" 
       preserveAspectRatio="xMidYMid slice"/>
-    <!-- 👆 ------------------- 👆 -->
+    <!-- 👆 ---------------------------- 👆 -->
     
     <!-- Arch Outline & Base Line -->
     <path d="M 850 390 L 850 230 Q 850 130 940 130 Q 1030 130 1030 230 L 1030 390" fill="none" stroke="#5d2b44" stroke-width="1.5"/>
