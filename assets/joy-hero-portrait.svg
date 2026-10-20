@@ -1,25 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" height="100%" style="background-color: #0a0508; font-family: sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 480" width="100%" height="100%" style="background-color: #0a0508; font-family: sans-serif;">
   <defs>
-    <!-- Background Grid Pattern -->
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
     </pattern>
-
-    <!-- Ambient Background Glow -->
     <radialGradient id="bg-glow" cx="80%" cy="50%" r="60%">
       <stop offset="0%" stop-color="#3d1324" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#0a0508" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Portrait Arch Fallback Gradient -->
     <linearGradient id="portrait-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffe3ee"/>
       <stop offset="40%" stop-color="#e88fb0"/>
       <stop offset="70%" stop-color="#6a1e36"/>
       <stop offset="100%" stop-color="#1a060d"/>
     </linearGradient>
-
-    <!-- The Arch Shape Clip Path for the Image -->
     <clipPath id="arch-clip">
       <path d="M 850 390 L 850 230 Q 850 130 940 130 Q 1030 130 1030 230 L 1030 390 Z"/>
     </clipPath>
@@ -31,36 +24,30 @@
   <rect width="100%" height="100%" fill="url(#grid)"/>
 
   <!-- RIGHT SIDE: GRAPHICS & PORTRAIT -->
-  <!-- Outer Decorative Circles -->
   <circle cx="940" cy="240" r="280" fill="none" stroke="#381724" stroke-width="1" stroke-dasharray="2 6"/>
   <circle cx="940" cy="240" r="230" fill="none" stroke="#381724" stroke-width="1"/>
   <circle cx="940" cy="240" r="190" fill="none" stroke="#4d2032" stroke-width="1"/>
   
-  <!-- Portrait Arch Container -->
   <g>
-    <!-- Fallback Gradient (Visible if image fails to load) -->
+    <!-- Fallback gradient (shows if Base64 is not yet inserted) -->
     <path d="M 850 390 L 850 230 Q 850 130 940 130 Q 1030 130 1030 230 L 1030 390 Z" fill="url(#portrait-grad)"/>
     
-    <!-- 👇 YOUR NEW IMAGE LINK IS HERE 👇 -->
+    <!-- 👇 PASTE YOUR BASE64 STRING INSIDE THE href QUOTES BELOW 👇 -->
     <image 
-      xlink:href="https://plain-weur-prod-public.komododecks.com/202610/20/f5m5YWopyFWM1pB7dSnY/image.jpg" 
-      href="https://plain-weur-prod-public.komododecks.com/202610/20/f5m5YWopyFWM1pB7dSnY/image.jpg" 
+      href="data:image/jpeg;base64,YOUR_BASE64_STRING_HERE" 
       x="850" y="130" width="180" height="260" 
       clip-path="url(#arch-clip)" 
       preserveAspectRatio="xMidYMid slice"/>
-    <!-- 👆 ---------------------------- 👆 -->
+    <!-- 👆 ------------------------------------------------- 👆 -->
     
-    <!-- Arch Outline & Base Line -->
     <path d="M 850 390 L 850 230 Q 850 130 940 130 Q 1030 130 1030 230 L 1030 390" fill="none" stroke="#5d2b44" stroke-width="1.5"/>
     <line x1="845" y1="390" x2="1035" y2="390" stroke="#5d2b44" stroke-width="1.5"/>
   </g>
 
-  <!-- Technical UI Brackets & Lines around Arch -->
   <path d="M 800 330 L 800 390 L 850 390" fill="none" stroke="#6a2f47" stroke-width="1"/>
   <path d="M 850 405 L 1030 405" fill="none" stroke="#6a2f47" stroke-width="1"/>
   <path d="M 1030 350 L 1070 350 L 1070 405 L 1030 405" fill="none" stroke="#6a2f47" stroke-width="1"/>
   
-  <!-- Tech Labels -->
   <g font-family="monospace" font-size="11" fill="#a38a97" letter-spacing="1">
     <circle cx="835" cy="80" r="2.5" fill="#e88fb0"/><text x="845" y="84">LLM</text>
     <circle cx="1115" cy="140" r="2.5" fill="#e88fb0"/><text x="1125" y="144">API</text>
@@ -68,7 +55,6 @@
     <circle cx="785" cy="270" r="2.5" fill="#e88fb0"/><text x="795" y="274">UI</text>
   </g>
 
-  <!-- Decorative Scattered Dots -->
   <g fill="#ffffff">
     <circle cx="700" cy="80" r="1.5" opacity="0.6"/>
     <circle cx="850" cy="180" r="1.5" opacity="0.4"/>
@@ -81,8 +67,6 @@
   </g>
 
   <!-- LEFT SIDE: TEXT & TERMINAL -->
-  
-  <!-- Terminal Prompt -->
   <g transform="translate(80, 60)">
     <rect width="320" height="36" rx="18" fill="#210c18" stroke="#4d1f36" stroke-width="1"/>
     <circle cx="20" cy="18" r="4" fill="#e88fb0"/>
@@ -90,30 +74,25 @@
     <rect x="285" y="8" width="8" height="20" fill="#e88fb0" opacity="0.8"/>
   </g>
 
-  <!-- Subtitle -->
   <g transform="translate(80, 140)">
     <line x1="0" y1="-4" x2="25" y2="-4" stroke="#a38a97" stroke-width="1.5"/>
     <text x="35" y="0" font-family="sans-serif" font-size="12" letter-spacing="4" fill="#a38a97">WEB DEVELOPMENT · FULL-STACK · UI</text>
   </g>
 
-  <!-- Main Heading (Joy Patel.) -->
   <g font-family="'Playfair Display', 'Georgia', serif" font-style="italic" fill="#0d0408" stroke="#361725" stroke-width="1.5">
     <text x="75" y="245" font-size="110" letter-spacing="-2">Joy</text>
     <text x="75" y="345" font-size="110" letter-spacing="-2">Patel.</text>
   </g>
 
-  <!-- Descriptions -->
   <g transform="translate(80, 385)">
     <text x="0" y="0" font-family="sans-serif" font-size="13" letter-spacing="1.5" fill="#e8dbe2">WEB DEVELOPER · FULL-STACK DEVELOPER · COMPUTER ENGINEERING</text>
     <text x="0" y="35" font-family="'Playfair Display', 'Georgia', serif" font-style="italic" font-size="22" fill="#cbb0be">Building fast, friendly experiences for the web.</text>
   </g>
 
-  <!-- FOOTER -->
   <line x1="80" y1="445" x2="1120" y2="445" stroke="#3c1a2a" stroke-width="1"/>
   
   <g font-family="sans-serif" font-size="11" letter-spacing="1.5" fill="#a38a97">
     <text x="80" y="470">MSC COMPUTING · UNIVERSITY OF HUDDERSFIELD · 2025 - 2026</text>
     <text x="1120" y="470" text-anchor="end">WEB DEVELOPER · FULL-STACK DEVELOPER · CATERHAM, UK</text>
   </g>
-
 </svg>
